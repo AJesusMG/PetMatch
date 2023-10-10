@@ -1,0 +1,33 @@
+/* footerStyles.module.css */
+.footer {
+    background-color: #FFD893; /* Color de fondo que desees */
+    padding: 24px; /* Ajusta el espaciado según tus necesidades */
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .sectionLinks{
+    margin-top: 50px;
+  }
+  .link__options{
+    text-decoration: none;
+    color: black;
+     background-color: transparent;
+     border: transparent;
+  }
+
+  .linkDecoration{
+    color: black !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    text-align: center;
+    align-items: center;
+  }
+
+  .linkDecoration:hover{
+    transition: 0.02s !important;
+    text-decoration: underline !important;
+  }

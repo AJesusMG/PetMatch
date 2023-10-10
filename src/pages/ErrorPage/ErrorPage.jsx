@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './errorPage.module.css';
-import Fox from '../../../img/ErrorFox.png';
+import Fox from '../../../public/img/ErrorFox.png';
 
 
 function ErrorPage() {
