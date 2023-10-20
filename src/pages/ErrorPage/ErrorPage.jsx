@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './errorPage.module.css';
-import Fox from '../../../img/ErrorFox.png';
-import Button from '@mui/material/Button'; 
+import Fox from '../../../public/img/ErrorFox.png';
+import Button from '@mui/material/Button';
 
 function ErrorPage() {
   return (

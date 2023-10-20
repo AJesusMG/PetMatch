@@ -1,0 +1,25 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .Card {
+    width: 450px;
+    height: 660px;
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  .User {
+    margin-left: 20px;
+    font-weight: lighter;
+    font-size: 20px;
+  }
+  
+  .descripcion {
+    margin: 10px 10px 0px 10px;
+    text-align: center;
+    font-size: 20px;
+  }

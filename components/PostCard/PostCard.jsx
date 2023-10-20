@@ -1,10 +1,12 @@
-import React from 'react';
-import { Card } from '@mui/material';
-import styles from './postCard.module.css';
-import Dog from '../../img/Dog.jpg';
-const userName = '@ElCaminoDelProgramador';
+import React from "react";
+import { Card } from "@mui/material";
+import Dog from "../../public/img/Dog.jpg";
 
-export const PostCard = () => {
+import styles from "./postCardStyles.module.css";
+
+const userName = "@ElCaminoDelProgramador";
+
+const PostCard = ({}) => {
   return (
     <Card className={styles.Card}>
       <img className={styles.Dog} src={Dog} alt="Dog" />
@@ -14,3 +16,5 @@ export const PostCard = () => {
     </Card>
   );
 };
+
+export default PostCard;

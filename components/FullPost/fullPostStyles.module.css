@@ -1,0 +1,11 @@
+.Card {
+    width: 1119px;
+    height: 639px;
+    position: relative;
+    margin-top: 10px;
+  }
+
+  .Dog {
+    width: 639px;
+    height: 639px;
+  }

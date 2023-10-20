@@ -1,13 +1,12 @@
-import React from 'react'
-import { PostCard } from '../../../components/PostCard/PostCard'
+import React from "react";
+import PostCard from "../../../components/PostCard/PostCard";
+import FullPost from "../../../components/FullPost/fullPost";
 
-export const Catalogue = () => {
-    return (
-        <div>
-            <PostCard />
-        </div>
-
-    )
+export default function Catalogue() {
+  return (
+    <div>
+      {/* <PostCard /> */}
+      <FullPost />
+    </div>
+  );
 }
-
-export default Catalogue
