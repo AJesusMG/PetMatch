@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import ChoseTypePet from '../../../components/ChoseTypePet/choseTypePet'
 
 export const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <div>SignUp
+      <ChoseTypePet/>
+    </div>
+    
   )
 }
 
