@@ -1,13 +1,9 @@
 import React from 'react'
-import SideNav from "../../../components/SideNav/sideNav.jsx";
 
-export default function Comments () {
+export const Comments = () => {
   return (
-    <>
-      <SideNav />
-      
-    </>
-  );
+    <div>Comments</div>
+  )
 }
 
-
+export default Comments
