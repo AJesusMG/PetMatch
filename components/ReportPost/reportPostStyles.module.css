@@ -73,3 +73,23 @@
   width: 590px;
   height: 639px;
 }
+
+.btnContainer {
+  width: 420px;
+  margin: 30px auto;
+}
+
+.deleteBtn {
+  font-family: "Poppins", sans-serif !important;
+  background-color: #FF543E !important;
+  text-transform: capitalize !important;
+  font-size: 16px !important;
+}
+
+.ignoretBtn {
+  font-family: "Poppins", sans-serif !important;
+  background-color: #FEAE21 !important;
+  text-transform: capitalize !important;
+  font-size: 16px !important;
+  float: right;
+}
