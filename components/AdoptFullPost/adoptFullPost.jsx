@@ -3,9 +3,9 @@ import { Button, Card, Chip, Typography } from "@mui/material";
 import { AccountCircle, Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import Dog from "../../public/img/Mopri.png";
 
-import styles from "./fullPostStyles.module.css";
+import styles from "./adoptFullPostStyles.module.css";
 
-const FullPost = ({ username }) => {
+const AdoptFullPost = ({ username }) => {
   return (
     <Card className={styles.Card}>
       <div className={styles.Content}>
@@ -49,10 +49,13 @@ const FullPost = ({ username }) => {
               </div>
             </div>
           </div>
+          <div className={styles.btnContainer}>
+          <Button className={styles.adoptBtn} variant="contained">Adoptado</Button>
+          </div>
         </div>
       </div>
     </Card>
   );
 };
 
-export default FullPost;
+export default AdoptFullPost;
