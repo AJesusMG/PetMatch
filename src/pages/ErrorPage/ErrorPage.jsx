@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './errorPage.module.css';
 import Fox from '../../../public/img/ErrorFox.png';
-import Button from '@mui/material/Button';
+
 
 function ErrorPage() {
   return (
@@ -11,10 +11,7 @@ function ErrorPage() {
       </div>
       <div className={styles.rightColumn}>
         <h1>¡ERROR 404!!!</h1>
-        <p>Una disculpa pero esta página</p><br></br>
-        <p>no ha sido encontrada, regresa</p><br/>
-        <p>a la página de inicio.</p>
-        <Button className={styles.button} variant="contained" href='../LandingPage/LandingPage.jsx'><b>Regresar</b></Button>      
+        <p>Una disculpa pero esta página no ha sido encontrada, regresa a la página de inicio.</p>
       </div>
     </div>
   );
