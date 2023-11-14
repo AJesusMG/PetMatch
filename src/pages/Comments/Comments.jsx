@@ -1,14 +1,11 @@
 import React from 'react'
-import SideNav from "../../../components/SideNav/sideNav.jsx";
-
+import SideBar from '../../../components/SideBar/sideBar'
 
 export const Comments = () => {
   return (
-  
-    <>
-    <SideNav />
-    </>
-    
+    <div>
+      <SideBar />
+    </div>
   )
 }
 

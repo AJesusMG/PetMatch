@@ -1,11 +1,31 @@
 import React from "react";
-import PostCard from "../../../components/PostCard/PostCard";
-import FullPost from "../../../components/FullPost/fullPost";
-import AdoptFullPost from "../../../components/AdoptFullPost/adoptFullPost";
-import ReportPost from "../../../components/ReportPost/reportPost";
-import SideNav from "../../../components/SideNav/sideNav.jsx";
-
+import { Grid } from "@mui/material";
 import SideBar from "../../../components/SideBar/sideBar";
+import PostCard from "../../../components/PostCard/PostCard";
+import styles from "./catalogueStyles.module.css";
+
+const PostInfo = [
+  {
+    id: 1,
+    img: "https://dog.ceo/api/breeds/image/random",
+    userName: "@Usuario1",
+  },
+  {
+    id: 2,
+    img: "https://dog.ceo/api/breeds/image/random",
+    userName: "@Usuario2",
+  },
+  {
+    id: 3,
+    img: "https://dog.ceo/api/breeds/image/random",
+    userName: "@Usuario3",
+  },
+  {
+    id: 4,
+    img: "https://dog.ceo/api/breeds/image/random",
+    userName: "@Usuario4",
+  },
+];
 
 export default function Catalogue() {
   return (
@@ -14,13 +34,15 @@ export default function Catalogue() {
       <div>
         <SideBar />
       </div>
-      {/* <PostCard /> */}
-      {/* <FullPost /> */}
-      {/* <AdoptFullPost /> */}
-      <div>
-        <SideNav />
+      <div className={styles.postContainer}>
+        <Grid container spacing={2}>
+          {PostInfo.map((post, index) => (
+            <Grid item key={index}>
+              <PostCard {...post} />
+            </Grid>
+          ))}
+        </Grid>
       </div>
-      <ReportPost />
     </div>
   );
 }
