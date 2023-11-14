@@ -14,7 +14,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 200;
 
@@ -73,7 +73,6 @@ export default function SideBar() {
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
-
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -101,151 +100,140 @@ export default function SideBar() {
           >
             PetMatch
           </Typography>
-
         </DrawerHeader>
-
-      <List>
-        <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/Catalogue")}}>
-          <ListItemButton className='listItemButton'
-            sx={{
-              minHeight: 68,
-              Width: '18px',
-              justifyContent: open ? 'initial' : 'center',
-              transition: 'transform 0.2s',
-              '&:hover': {
-                background: 'rgba(254, 174, 33, 1)',
-                borderRadius: '10%',
-              },
-              px: 2.5,
-              cursor: open ? 'pointer' : 'default',
-            }}
-          >
-            <ListItemIcon
+        <List>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Catalogue") }}>
+            <ListItemButton className='listItemButton'
               sx={{
-                minWidth: 0,
-                mr: open ? 3 : 'auto',
-                justifyContent: 'center',
+                minHeight: 68,
+                Width: '18px',
+                justifyContent: open ? 'initial' : 'center',
                 transition: 'transform 0.2s',
                 '&:hover': {
-                  transform: 'scale(1.4)',
-                  color: 'white', 
+                  background: 'rgba(254, 174, 33, 1)',
+                  borderRadius: '10%',
                 },
+                px: 2.5,
+                cursor: open ? 'pointer' : 'default',
               }}
             >
-              <AutoStoriesIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={<span style={{ fontWeight: 'bold' }}>Catalogo</span>}
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'scale(1.4)',
+                    color: 'white',
+                  },
+                }}
+              >
+                <AutoStoriesIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={<span style={{ fontWeight: 'bold' }}>Catalogo</span>}
+                sx={{
+                  opacity: open ? 1 : 0,
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'scale(1.2)',
+                    color: 'white',
+                  },
+                }}
+              />
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Comments") }}>
+            <ListItemButton
               sx={{
-                opacity: open ? 1 : 0,
-                transition: 'transform 0.2s', 
-                '&:hover': {
-                  transform: 'scale(1.2)',
-                  color: 'white',
-                },
-              }}
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
-      
-      <List>
-        <ListItem disablePadding sx={{ display: 'block' }} onClick={()=>{navigate("/Comments")}}>
-          <ListItemButton
-            sx={{
-              minHeight: 68,
-              Width: '18px',
-              justifyContent: open ? 'initial' : 'center',
-              transition: 'transform 0.2s',
-              '&:hover': {
-                background: 'rgba(254, 174, 33, 1)',
-                borderRadius: '10%',
-              },
-              px: 2.5,
-              cursor: open ? 'pointer' : 'default',
-            }}
-          >
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : 'auto',
-                justifyContent: 'center',
+                minHeight: 68,
+                Width: '18px',
+                justifyContent: open ? 'initial' : 'center',
                 transition: 'transform 0.2s',
                 '&:hover': {
-                  transform: 'scale(1.4)',
-                  color: 'white', 
+                  background: 'rgba(254, 174, 33, 1)',
+                  borderRadius: '10%',
                 },
+                px: 2.5,
+                cursor: open ? 'pointer' : 'default',
               }}
             >
-              <PeopleOutlineIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={<span style={{ fontWeight: 'bold' }}>Comunidad</span>}
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'scale(1.4)',
+                    color: 'white',
+                  },
+                }}
+              >
+                <PeopleOutlineIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={<span style={{ fontWeight: 'bold' }}>Comunidad</span>}
+                sx={{
+                  opacity: open ? 1 : 0,
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'scale(1.2)',
+                    color: 'white',
+                  },
+                }}
+              />
+            </ListItemButton>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
               sx={{
-                opacity: open ? 1 : 0,
-                transition: 'transform 0.2s', 
-                '&:hover': {
-                  transform: 'scale(1.2)',
-                  color: 'white',
-                },
-              }}
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
-
-      <List>
-        <ListItem disablePadding sx={{ display: 'block' }}>
-          <ListItemButton
-            sx={{
-              minHeight: 68,
-              Width: '18px',
-              justifyContent: open ? 'initial' : 'center',
-              transition: 'transform 0.2s',
-              '&:hover': {
-                background: 'rgba(254, 174, 33, 1)',
-                borderRadius: '10%',
-              },
-              px: 2.5,
-              cursor: open ? 'pointer' : 'default',
-            }}
-          >
-            <ListItemIcon
-              sx={{
-                minWidth: 0,
-                mr: open ? 3 : 'auto',
-                justifyContent: 'center',
+                minHeight: 68,
+                Width: '18px',
+                justifyContent: open ? 'initial' : 'center',
                 transition: 'transform 0.2s',
                 '&:hover': {
-                  transform: 'scale(1.4)',
-                  color: 'white', 
+                  background: 'rgba(254, 174, 33, 1)',
+                  borderRadius: '10%',
                 },
+                px: 2.5,
+                cursor: open ? 'pointer' : 'default',
               }}
             >
-              <AddIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={<span style={{ fontWeight: 'bold' }}>Añadir</span>}
-              sx={{
-                opacity: open ? 1 : 0,
-                transition: 'transform 0.2s', 
-                '&:hover': {
-                  transform: 'scale(1.2)',
-                  color: 'white',
-                },
-              }}
-            />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : 'auto',
+                  justifyContent: 'center',
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'scale(1.4)',
+                    color: 'white',
+                  },
+                }}
+              >
+                <AddIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary={<span style={{ fontWeight: 'bold' }}>Añadir</span>}
+                sx={{
+                  opacity: open ? 1 : 0,
+                  transition: 'transform 0.2s',
+                  '&:hover': {
+                    transform: 'scale(1.2)',
+                    color: 'white',
+                  },
+                }}
+              />
+            </ListItemButton>
+          </ListItem>
+        </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <Toolbar position="fixed" open={open}>
-        </Toolbar>
-        
-      </Box>
     </Box>
   );
 }
