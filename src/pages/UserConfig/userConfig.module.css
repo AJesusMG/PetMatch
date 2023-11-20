@@ -1,0 +1,163 @@
+
+
+/* Estilos para el encabezado h1 */
+h1 {
+  margin-top: 3rem;
+}
+
+/* Estilos para el contenedor principal con flexbox */
+.containerFlex {
+  display: flex;
+  height: 120vh;
+}
+
+/* Estilos para la barra lateral */
+.sideBar {
+  flex: 5%;
+}
+
+/* Estilos para el contenedor de elementos (imagen y botón) */
+.itemsContainer {
+  flex: 35%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos para el contenedor del formulario */
+.formContainer {
+  flex: 60%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+/* Estilos para el contenedor de la imagen */
+.imageContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+/* Estilos para el contenedor del botón */
+.buttonContainer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 18rem;
+  margin-right: 5rem;
+}
+
+/* Estilos para el contenedor de la contraseña y el botón */
+.passwordContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Estilos para el botón de la contraseña */
+.btnPassword {
+  width: 22%;
+  height: 2.5rem;
+  background-color: #FEAE21;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  margin-left: 10px;
+}
+
+/* Estilos para la imagen del perfil */
+.profile {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 50%;
+  margin-left: 6rem;
+  margin-right: 1rem;
+  margin-top: 12rem;
+  margin-bottom: 4.5rem;
+  transition: filter 0.25s ease;
+}
+
+/* Estilos para la imagen del perfil con hover */
+.profile:hover {
+  filter: brightness(50%); /* Oscurecer al 80% cuando se hace hover */
+  position: relative;
+}
+
+/* Estilos para el mensaje "Cambiar foto" en hover */
+.changePhotoMessage {
+  transition: opacity 0.25s ease, visibility 0.125s ease; /* Agregar transición a la opacidad y visibilidad */
+  position: absolute;
+  top: 45%; /* Posición centrada verticalmente */
+  left: 83%; /* Posición centrada horizontalmente */
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+  opacity: 0; /* Inicialmente invisible */
+  pointer-events: none; /* Evitar que afecte los clics */
+  text-decoration: none;
+}
+
+/* Estilos para el contenedor de la imagen y el mensaje "Cambiar foto" */
+.imageContainer:hover .changePhotoMessage {
+  opacity: 1; /* Mostrar el mensaje en hover */
+  pointer-events: auto; /* Permitir que afecte los clics */
+}
+
+
+
+/* Estilos para la entrada de texto personalizada */
+.customInput {
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  padding: 8px;
+  width: 80%;
+}
+
+/* Estilos para el campo de teléfono */
+.phone {
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  padding: 8px;
+  max-width: 40%;
+}
+
+/* Estilos para la entrada de contraseña */
+.password {
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  padding: 8px;
+  width: 55%;
+}
+
+/* Estilos para el formulario */
+.form {
+  flex: 1;
+  max-width: 80%;
+  margin: 0;
+}
+
+/* Estilos para el texto encima de las entradas */
+.inputTextAbove {
+  font-size: 1rem;
+  color: #000000;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de guardar cambios */
+.saveButton {
+  width: 30%;
+  height: 3rem;
+  background-color: #99E550;
+  color: #000000;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}

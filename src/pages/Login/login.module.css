@@ -28,7 +28,7 @@ main {
   position: relative;
   width: 100%;
   max-width: 1020px;
-  height: 640px;
+  height: 740px;
   background-color: #fff;
   border-radius: 3.3rem;
   box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
@@ -127,8 +127,8 @@ form.signupForm {
   font-size: 1rem;
   color: #000000;
   display: block;
-  margin-top: -18px;
-  margin-bottom: 10px;
+  
+  margin-bottom: 6px;
 }
 
 .inputField {
@@ -234,7 +234,7 @@ main.signupMode .carousel {
 
 .image {
   width: 100%;
-  height: 75%;
+  height: 90%;
   object-fit: cover;
   grid-column: 1/2;
   opacity: 0;
