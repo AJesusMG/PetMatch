@@ -8,6 +8,7 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import Comments from "./pages/Comments/Comments";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import UserConfig from './pages/userConfig/userConfig';
+import AdminReports from './pages/AdminReports/AdminReports';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/MyAccount" element={<MyAccount />} />
         <Route path="/ErrorPage" element={<ErrorPage />} />
         <Route path="/UserConfig" element={<UserConfig />} />
+        <Route path="/AdminReports" element={<AdminReports />} />
         
       </Routes>
     </Router>

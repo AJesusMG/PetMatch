@@ -11,7 +11,10 @@ function ErrorPage() {
       </div>
       <div className={styles.rightColumn}>
         <h1>¡ERROR 404!!!</h1>
-        <p>Una disculpa pero esta página no ha sido encontrada, regresa a la página de inicio.</p>
+        <p className={styles.text}>Una disculpa pero esta página <br />no ha sido encontrada, regresa <br />a la página de inicio.</p>
+        <button type="submit" className={styles.Button}>
+          <b>Regresar</b>
+        </button>
       </div>
     </div>
   );
