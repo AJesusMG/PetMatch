@@ -16,7 +16,7 @@ const FullPost = ({ username }) => {
           <div className={styles.topSection}>
             <div className={styles.userInfo}>
               <div><AccountCircle style={{ fontSize: 50 }} /></div>
-              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16, fontFamily: "Poppins" }}>@a.jesus.g</Typography>
+              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>@a.jesus.g <br /> Queretaro, Rancho Largo</Typography>
             </div>
             <Button className={styles.reportBtn} variant="text">Reportar</Button>
           </div>
@@ -28,7 +28,7 @@ const FullPost = ({ username }) => {
             </Typography>
           </div>
           <div className={styles.tagsContainer}>
-            <Typography style={{ fontWeight: "bold", fontSize: 20, fontFamily: "Poppins" }}>Tags</Typography>
+            <Typography style={{ fontWeight: "bold", fontSize: 20 }}>Tags</Typography>
             <div className={styles.tags}>
               <Chip label="Husky" variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
               <Chip label="Grande" variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
@@ -36,16 +36,16 @@ const FullPost = ({ username }) => {
             </div>
           </div>
           <div className={styles.contactContainer}>
-            <Typography style={{ fontWeight: "bold", fontSize: 20, fontFamily: "Poppins" }}>Contáctame</Typography>
+            <Typography style={{ fontWeight: "bold", fontSize: 20 }}>Contáctame</Typography>
             <div className={styles.contactInfo}>
               <div className={styles.socialStyle}><Instagram />
-                <Typography style={{ marginLeft: "10px", fontFamily: "Poppins", fontWeight: "bold" }}>a.jesus.g</Typography>
+                <Typography style={{ marginLeft: "10px", fontWeight: "bold" }}>a.jesus.g</Typography>
               </div>
               <div className={styles.socialStyle}><WhatsApp style={{ marginTop: "10px" }} />
-                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontFamily: "Poppins", fontWeight: "bold" }}>2712452978</Typography>
+                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontWeight: "bold" }}>2712452978</Typography>
               </div>
               <div className={styles.socialStyle}><Facebook style={{ marginTop: "10px" }} />
-                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontFamily: "Poppins", fontWeight: "bold" }}>Alan Morales</Typography>
+                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontWeight: "bold" }}>Alan Morales</Typography>
               </div>
             </div>
           </div>
