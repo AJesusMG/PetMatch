@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+.Card {
+  width: 1120px;
+  height: 639px;
+  margin-top: 10px;
+}
+
+.Content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mainContainer {
+  width: 500px;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+
+.reportBtn {
+  font-family: "Poppins", sans-serif !important;
+  color: black !important;
+  text-transform: capitalize !important;
+  font-size: 16px !important;
+}
+
+.infoContainer {
+  width: 420px;
+  margin: 30px auto;
+}
+
+.infoText {
+  font-family: "Poppins", sans-serif !important;
+  text-align: justify;
+  font-size: 18px !important;
+}
+
+.tagsContainer {
+  width: 420px;
+  margin: 30px auto;
+}
+
+.tags {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.contactContainer {
+  width: 420px;
+  margin: 30px auto;
+}
+
+.contactInfo {
+  margin-top: 20px;
+}
+
+.socialStyle {
+  display: flex;
+}
+
+.Dog {
+  width: 590px;
+  height: 639px;
+}

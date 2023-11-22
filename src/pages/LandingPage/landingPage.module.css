@@ -1,0 +1,33 @@
+* {
+    font-family: "Poppins", sans-serif;
+  }  
+
+.heroStyle {
+    margin-top: 65px;
+    width: 100%;
+}
+
+.titleMascota {
+    font-size: 48px;
+    text-align: center;
+}
+
+.titleAdopta {
+    font-size: 48px;
+    text-align: center;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0px 40px 0px;
+  }
+
+.btnCatalogoStyle {
+    background-color: #99E550 !important;
+    font-size: 20px !important;
+    color: black !important;
+    border-radius: 5px;
+    text-transform: capitalize !important;
+}

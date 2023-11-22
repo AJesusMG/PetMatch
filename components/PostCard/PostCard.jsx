@@ -1,16 +1,18 @@
-import React from 'react'
-import { Card } from '@mui/material'
-import styles from "./postCard.module.css"
+import React from "react";
+import { Card } from "@mui/material";
 
-export const PostCard = () => {
+import styles from "./postCardStyles.module.css";
+
+const PostCard = (props) => {
   return (
-    <div>
-      PostCard
-      <Card className={styles.card}>
+    <Card className={styles.Card} key={props.id}>
+      <img className={styles.Dog} src={props.img} alt="Imagen de un perro" />
+      <div className={styles.overlay}>
+        <h2 className={styles.userName}>{props.userName}</h2>
+      </div>
+    </Card>
+  );
+};
 
-      </Card>
-    </div>
-  )
-}
-
+export default PostCard;
 
