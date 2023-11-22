@@ -1,0 +1,26 @@
+.main{
+    background-color: rgb(239, 239, 239);
+}
+.NavItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+  }
+  
+  .Dog {
+    flex: 5%;
+    width: 15%;
+    margin-top: 2.5rem;
+    margin-left: 28rem;
+    border-radius: 50%;
+  }
+  
+  .Title {
+    flex: 95%;
+    width: 100%;
+    margin-left: 8rem;
+    margin-right: 20rem;
+    color: #FEAE21;
+  }
+  

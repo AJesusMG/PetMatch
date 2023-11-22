@@ -74,7 +74,7 @@ export default function SideBar() {
     setOpen(!open);
   };
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex'}}>
       <CssBaseline />
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
