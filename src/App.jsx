@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import Comments from "./pages/Comments/Comments";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import Questionnaire from "./pages/Questionnaire/Questionnaire";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/Comments" element={<Comments />} />
         <Route path="/MyAccount" element={<MyAccount />} />
         <Route path="/ErrorPage" element={<ErrorPage />} />
-        
+        <Route path="/Questionnaire" element={<Questionnaire />} />
       </Routes>
     </Router>
   );

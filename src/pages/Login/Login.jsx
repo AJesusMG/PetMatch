@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './login.module.css';
 
 export const Login = () => {
-  const[mode, setMode] = useState('signIn');
-  
+  const [mode, setMode] = useState('signIn');
+
   const handleToggle = () => {
     setMode((prevMode) => (prevMode === 'signIn' ? 'signUp' : 'signIn'));
   };
@@ -48,125 +48,125 @@ export const Login = () => {
   };
 
   return (
-        <div className={styles.body}>
-          <main className={`${styles.main} ${mode === 'signUp' ? styles.signupMode : ''}`}>
-            <div className={styles.box}>
-              <div className={styles.innerBox}>
-                <div className={styles.formsWrap}>
-                  <form onSubmit={mode === 'signIn' ? handleSignIn : handleSignUp} autoComplete="off" className={styles.signinForm}>
-                    <div className={styles.logo}>
-                      <img src="./img/Logo_PNG.png" alt="easyclass" />
-                      <h4>PetMatch</h4>
-                    </div>
-
-                    <div className={styles.heading}>
-                      <h2>{mode === 'signIn' ? '¡ Bienvenid@ de vuelta !' : '¡ Regístrate !'}</h2>
-                      <h6>{mode === 'signIn' ? '¿No tienes una cuenta?' : '¿Ya tienes una cuenta?'}</h6>
-                      <a href="#" className={styles.toggle} onClick={handleToggle}>
-                         {mode === 'signIn' ? 'Regístrate' : 'Iniciar Sesión'}
-                      </a>
-                    </div>
-                    <div className={styles.actualForm}>
-                    <span className={styles.inputTextAbove}><b>Nombres</b></span>
-                      <div className={styles.inputWrap}>
-                      
-                        <input
-                          type="text"
-                          minLength="4"
-                          className={styles.inputField}
-                          autoComplete="off"
-                          required
-                        />
-                      </div>
-                      <span className={styles.inputTextAbove}><b>Contraseña</b></span>
-
-                      <div className={styles.inputWrap}>
-                      
-                        <input
-                          type="password"
-                          minLength="4"
-                          className={styles.inputField}
-                          autoComplete="off"
-                          required
-                        />
-                      </div>
-
-                      <input type="submit" value="Iniciar Sesión" className={styles.signBtn} />
-
-                      <p className={styles.text}>
-                        Haz olvidado tu contraseña o información de usuario? {' '}<a href="#"><b>Obtener ayuda</b></a>
-                  
-                      </p>
-                    </div>
-                  </form>
-
-                  <form onSubmit={handleSignUp} autoComplete="off" className={styles.signupForm}>
-                    <div className={styles.logo}>
-                      <img src="./img/Logo_PNG.png" alt="easyclass" />
-                      <h4>PetMatch</h4>
-                    </div>
-
-                    <div className={styles.heading}>
-                      <h2>{mode === 'signIn' ? '¡ Bienvenid@ de vuelta !' : '¡ Regístrate !'}</h2>
-                      <h6>{mode === 'signIn' ? '¿No tienes una cuenta?' : '¿Ya tienes una cuenta?'}</h6>
-                      <a href="#" className={styles.toggle} onClick={handleToggle}>
-                          {mode === 'signIn' ? 'Regístrate' : 'Iniciar Sesión'}
-                      </a>
-                    </div>
-
-                    <div className={styles.actualForm}>
-                    <span className={styles.inputTextAbove}><b>Nombres</b></span>
-                      <div className={styles.inputWrap}>
-                        <input
-                          type="text"
-                          minLength="4"
-                          className={styles.inputField}
-                          autoComplete="off"
-                          required
-                        />
-                      </div>
-
-                      <span className={styles.inputTextAbove}><b>Correo</b></span>
-                      <div className={styles.inputWrap}>
-                        <input
-                          type="email"
-                          className={styles.inputField}
-                          autoComplete="off"
-                          required
-                        />
-                      </div>
-
-                      <span className={styles.inputTextAbove}><b>Contraseña</b></span>
-                      <div className={styles.inputWrap}>
-                        <input
-                          type="password"
-                          minLength="4"
-                          className={styles.inputField}
-                          autoComplete="off"
-                          required
-                        />
-                      </div>
-
-                      <input type="submit" value="Registrarme" className={styles.signBtn} />
-
-                      <p className={styles.text}>
-                        Al registrarte, aceptas nuestros <a href="#"><b>Términos y Servicios</b></a> y{' '}
-                        <a href="#"><b>Política de Privacidad</b></a>
-                      </p>
-                    </div>
-                  </form>
+    <div className={styles.body}>
+      <main className={`${styles.main} ${mode === 'signUp' ? styles.signupMode : ''}`}>
+        <div className={styles.box}>
+          <div className={styles.innerBox}>
+            <div className={styles.formsWrap}>
+              <form onSubmit={mode === 'signIn' ? handleSignIn : handleSignUp} autoComplete="off" className={styles.signinForm}>
+                <div className={styles.logo}>
+                  <img src="./img/Logo_PNG.png" alt="easyclass" />
+                  <h4>PetMatch</h4>
                 </div>
 
-                <div className={styles.carousel}>
-                  <div className={styles.imagesWrapper}>
-                      <img src="./img/AdoptMe.jpeg" className={`${styles.image} ${styles.img1} ${styles.show}`} alt="" />
+                <div className={styles.heading}>
+                  <h2>{mode === 'signIn' ? '¡ Bienvenid@ de vuelta !' : '¡ Regístrate !'}</h2>
+                  <h6>{mode === 'signIn' ? '¿No tienes una cuenta?' : '¿Ya tienes una cuenta?'}</h6>
+                  <a href="#" className={styles.toggle} onClick={handleToggle}>
+                    {mode === 'signIn' ? 'Regístrate' : 'Iniciar Sesión'}
+                  </a>
+                </div>
+                <div className={styles.actualForm}>
+                  <span className={styles.inputTextAbove}><b>Nombres</b></span>
+                  <div className={styles.inputWrap}>
+
+                    <input
+                      type="text"
+                      minLength="4"
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
                   </div>
+                  <span className={styles.inputTextAbove}><b>Contraseña</b></span>
+
+                  <div className={styles.inputWrap}>
+
+                    <input
+                      type="password"
+                      minLength="4"
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
+                  </div>
+
+                  <input type="submit" value="Iniciar Sesión" className={styles.signBtn} />
+
+                  <p className={styles.text}>
+                    Haz olvidado tu contraseña o información de usuario? {' '}<a href="#"><b>Obtener ayuda</b></a>
+
+                  </p>
                 </div>
+              </form>
+
+              <form onSubmit={handleSignUp} autoComplete="off" className={styles.signupForm}>
+                <div className={styles.logo}>
+                  <img src="./img/Logo_PNG.png" alt="easyclass" />
+                  <h4>PetMatch</h4>
+                </div>
+
+                <div className={styles.heading}>
+                  <h2>{mode === 'signIn' ? '¡ Bienvenid@ de vuelta !' : '¡ Regístrate !'}</h2>
+                  <h6>{mode === 'signIn' ? '¿No tienes una cuenta?' : '¿Ya tienes una cuenta?'}</h6>
+                  <a href="#" className={styles.toggle} onClick={handleToggle}>
+                    {mode === 'signIn' ? 'Regístrate' : 'Iniciar Sesión'}
+                  </a>
+                </div>
+
+                <div className={styles.actualForm}>
+                  <span className={styles.inputTextAbove}><b>Nombres</b></span>
+                  <div className={styles.inputWrap}>
+                    <input
+                      type="text"
+                      minLength="4"
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
+                  </div>
+
+                  <span className={styles.inputTextAbove}><b>Correo</b></span>
+                  <div className={styles.inputWrap}>
+                    <input
+                      type="email"
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
+                  </div>
+
+                  <span className={styles.inputTextAbove}><b>Contraseña</b></span>
+                  <div className={styles.inputWrap}>
+                    <input
+                      type="password"
+                      minLength="4"
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
+                  </div>
+
+                  <input type="submit" value="Registrarme" className={styles.signBtn} />
+
+                  <p className={styles.text}>
+                    Al registrarte, aceptas nuestros <a href="#"><b>Términos y Servicios</b></a> y{' '}
+                    <a href="#"><b>Política de Privacidad</b></a>
+                  </p>
+                </div>
+              </form>
+            </div>
+
+            <div className={styles.carousel}>
+              <div className={styles.imagesWrapper}>
+                <img src="./img/AdoptMe.jpeg" className={`${styles.image} ${styles.img1} ${styles.show}`} alt="" />
               </div>
             </div>
-          </main>
+          </div>
         </div>
-      
+      </main>
+    </div>
+
   )
 }
 
