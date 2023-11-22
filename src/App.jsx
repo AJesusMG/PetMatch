@@ -7,7 +7,8 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import MyAccount from "./pages/MyAccount/MyAccount";
 import Comments from "./pages/Comments/Comments";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Questionnaire from "./pages/Questionnaire/Questionnaire";
+import UserConfig from './pages/userConfig/userConfig';
+import AdminReports from './pages/AdminReports/AdminReports';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         <Route path="/Comments" element={<Comments />} />
         <Route path="/MyAccount" element={<MyAccount />} />
         <Route path="/ErrorPage" element={<ErrorPage />} />
-        <Route path="/Questionnaire" element={<Questionnaire />} />
+        <Route path="/UserConfig" element={<UserConfig />} />
+        <Route path="/AdminReports" element={<AdminReports />} />
+        
       </Routes>
     </Router>
   );
