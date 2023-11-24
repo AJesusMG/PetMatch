@@ -140,7 +140,7 @@ form.signupForm {
   outline: none;
   border: 1px solid #bbb;
   border-radius: 15px;
-  padding: 0;
+  padding: 10px;
   font-size: 0.95rem;
   color: #151111;
   transition: 0.4s;
@@ -230,6 +230,12 @@ main.signupMode .carousel {
   transition: 0.8s ease-in-out;
 }
 
+.Eye{
+  position: absolute;
+  top: 16%;
+  left: 85%;
+  cursor: pointer;
+}
 
 
 .image {

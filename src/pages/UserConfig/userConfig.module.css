@@ -33,7 +33,7 @@ h1 {
 }
 
 /* Estilos para el contenedor de la imagen */
-.imageContainer {
+.iconContainer {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -53,11 +53,12 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
 }
 
 /* Estilos para el botón de la contraseña */
 .btnPassword {
-  width: 22%;
+  width: 23%;
   height: 2.5rem;
   background-color: #FEAE21;
   color: #ffffff;
@@ -69,21 +70,27 @@ h1 {
 }
 
 /* Estilos para la imagen del perfil */
-.profile {
-  width: 25rem;
-  height: 25rem;
-  border-radius: 50%;
+.iconStyle {
+  width: 25rem!important;
+  height: 25rem!important;
   margin-left: 6rem;
-  margin-right: 1rem;
+  margin-right: 4rem;
   margin-top: 12rem;
   margin-bottom: 4.5rem;
   transition: filter 0.25s ease;
 }
 
 /* Estilos para la imagen del perfil con hover */
-.profile:hover {
+.iconStyle:hover {
   filter: brightness(50%); /* Oscurecer al 80% cuando se hace hover */
   position: relative;
+}
+
+.Eye{
+  position: absolute;
+  top: 23%;
+  left: 49%;
+  cursor: pointer;
 }
 
 /* Estilos para el mensaje "Cambiar foto" en hover */
@@ -91,7 +98,7 @@ h1 {
   transition: opacity 0.25s ease, visibility 0.125s ease; /* Agregar transición a la opacidad y visibilidad */
   position: absolute;
   top: 52%; /* Posición centrada verticalmente */
-  left: 85%; /* Posición centrada horizontalmente */
+  left: 83%; /* Posición centrada horizontalmente */
   transform: translate(-50%, -50%);
   color: #ffffff;
   font-size: 1.5rem;
@@ -102,7 +109,7 @@ h1 {
 }
 
 /* Estilos para el contenedor de la imagen y el mensaje "Cambiar foto" */
-.imageContainer:hover .changePhotoMessage {
+.iconContainer:hover .changePhotoMessage {
   opacity: 1; /* Mostrar el mensaje en hover */
   pointer-events: auto; /* Permitir que afecte los clics */
 }
