@@ -9,6 +9,8 @@ import Comments from "./pages/Comments/Comments";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import UserConfig from './pages/userConfig/userConfig';
 import AdminReports from './pages/AdminReports/AdminReports';
+import Questionnaire from './pages/Questionnaire/Questionnaire';
+import Catalog from './pages/Catalog/Catalog';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/ErrorPage" element={<ErrorPage />} />
         <Route path="/UserConfig" element={<UserConfig />} />
         <Route path="/AdminReports" element={<AdminReports />} />
+        <Route path="/Questionnaire" element={<Questionnaire />} />
+        <Route path="/Catalog" element={<Catalog />} />
         
       </Routes>
     </Router>

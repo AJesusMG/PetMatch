@@ -102,7 +102,7 @@ export default function SideBar() {
           </Typography>
         </DrawerHeader>
         <List>
-          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Catalogue") }}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Catalog") }}>
             <ListItemButton className='listItemButton'
               sx={{
                 minHeight: 68,

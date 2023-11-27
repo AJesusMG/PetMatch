@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.containerFlex {
+    display: flex;
+    height: 120vh;
+}
+
+.sideContainer {
+    flex: 5%;
+}
+
+.catalogContainer {
+    flex: 95%;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    margin-left: 80px;
+    justify-content: space-between;
+}
+
+.cardStyles {
+    width: 820px;
+    height: 225px;
+    margin-left: 20px;
+}
+
+.cardStyle {
+    width: 820px;
+    height: 190px;
+    margin-left: 20px;
+}
+
+.title {
+    font-weight: bold !important;
+    font-size: 50px;
+    padding: 10px 0px 0px 10px;
+}
+
+.btnStyle {
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color: black !important;
+    text-transform: capitalize !important;
+    margin-top: 40px !important;
+    margin-left: 10px !important;
+    border-bottom: 4px solid orange !important;
+}
+
+.lineBlack {
+    margin-top: 20px;
+    border-bottom: 2px solid #A9A9A9;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.avatarContainer {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.inputContainer {
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 90%;
+}
+
+.avatarStyle {
+    width: 4rem !important;
+    height: 4rem !important;
+}
+
+.inputStyle {
+    width: 90% !important;
+}
+
+.counterContainer {
+    text-align: end;
+    padding-top: 20px;
+    padding-right: 75px;
+}
+
+.btnContainer {
+    text-align: end;
+    padding-top: 20px;
+    padding-right: 75px;
+}
+
+.postBtn {
+    font-family: "Poppins", sans-serif !important;
+    background-color: #99E550 !important;
+    color: black !important;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
+    font-size: 16px !important;
+}
+
+.commentContainer {
+    margin-top: 10px;
+}
+
+.iconContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 70px;
+    padding-top: 20px;
+}
+
+.iconStyle {
+    color: black !important;
+}
