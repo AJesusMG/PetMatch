@@ -1,0 +1,15 @@
+.Container{
+    display: flex;
+}
+
+.sideBar{
+flex: 10%;
+}
+
+.commentCard{
+flex: 23%;
+}
+
+.Comments{
+flex: 70%;
+}
