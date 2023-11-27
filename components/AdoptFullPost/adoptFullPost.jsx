@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Card, Chip, Typography } from "@mui/material";
 import { AccountCircle, Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import Dog from "../../public/img/Mopri.png";
-
 import styles from "./adoptFullPostStyles.module.css";
 
 const AdoptFullPost = ({ username }) => {
