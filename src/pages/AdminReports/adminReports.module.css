@@ -1,19 +1,26 @@
 .main{
-    background-color: rgb(239, 239, 239);
+    background-color: rgb(248, 248, 248);
 }
 .NavItems {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    align-items: center;
   }
   
-  .Dog {
+  .iconContainer {
     flex: 5%;
-    width: 15%;
-    margin-top: 2.5rem;
-    margin-left: 28rem;
-    border-radius: 50%;
+
+  }
+
+  .iconStyle{
+    height: 6rem !important;
+    width: 6rem !important;
+    margin-top: 2.5rem !important;
+    margin-left: 24rem !important;
+    margin-right: 8rem !important;
+    cursor: pointer;
   }
   
   .Title {
@@ -22,5 +29,9 @@
     margin-left: 8rem;
     margin-right: 20rem;
     color: #FEAE21;
+  }
+
+  .Card{
+    margin-bottom: 20rem !important;
   }
   

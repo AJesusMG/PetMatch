@@ -1,8 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import SideBar from "../../../components/SideBar/sideBar";
 import styles from "./userConfig.module.css";
+import Profile from "../../../public/img/AdoptMe.jpeg";
+import {Avatar} from "@mui/material";
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
+
 
 export default function Catalogue() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
   // Define la función handlePhotoChange
   const handlePhotoChange = () => {
     // Acción que deseas realizar al cambiar la foto
@@ -39,7 +50,14 @@ export default function Catalogue() {
             <span className={styles.inputTextAbove}>Contraseña</span>
             <label htmlFor="password"></label>
             <div className={styles.passwordContainer}>
-              <input type="password" id="password" name="password" className={styles.password} />
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password" 
+                className={styles.password}/>
+              <span className={styles.Eye} onClick={togglePasswordVisibility}>
+                {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+              </span>
               <button type="submit" className={styles.btnPassword}>
                 <b>Cambiar Contraseña</b>
               </button>
@@ -66,12 +84,19 @@ export default function Catalogue() {
         </form>
       </div>
       <div className={styles.itemsContainer}>
-        <div className={styles.imageContainer}>
-          <img src="./img/AdoptMe.jpeg" alt="" className={styles.profile} />
+        <div className={styles.iconContainer}>
+          <Avatar
+            alt="Profile Image"
+            src={Profile}
+            onClick={handlePhotoChange}
+            className={styles.iconStyle}
+          />
+          
           <a href="#" className={styles.changePhotoMessage} onClick={handlePhotoChange}>
             Cambiar Foto de Perfil
           </a>
         </div>
+
         <div className={styles.buttonContainer}>
           <button type="submit" className={styles.saveButton}>
             <b>Guardar Cambios</b>

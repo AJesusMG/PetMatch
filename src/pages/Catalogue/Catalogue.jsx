@@ -58,7 +58,7 @@ export default function Catalogue() {
         <div className={styles.textContainer}>
           <h1 className={styles.titleBanner}>Bienvenidos a PetMatch</h1>
           <p className={styles.pStyle}>
-            <strong>¿Buscas a tu compañero perfecto de cuatro patas?</strong> 
+            <strong>¿Buscas a tu compañero perfecto de cuatro patas? </strong> 
              ¡No busques más! En <br /> nuestra plataforma, te conectamos con los
             animales en adopción que <br /> están ansiosos por encontrar un
             hogar amoroso.
