@@ -1,25 +1,44 @@
 .cardContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-  }
+  display: flex;
+  flex-direction: row;
+  /* gap: 50px; */
   
-  .Card {
-    width: 450px;
-    height: 660px;
-    position: relative;
-    margin-top: 10px;
-  }
-  
-  .User {
-    margin-left: 20px;
-    font-weight: lighter;
-    font-size: 20px;
-  }
-  
-  .descripcion {
-    margin: 10px 10px 0px 10px;
-    text-align: center;
-    font-size: 20px;
-  }
+}
+
+.Card {
+  width: 450px;
+  height: 660px;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 2rem;
+  box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.4)!important; 
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.Card:hover {
+  transform: scale(1.05); /* Ajusta según tus preferencias */
+  transition: transform 0.2s ease; /* Agrega una transición suave */
+}
+
+
+
+.User {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.Animal{
+  height: 25rem;
+  width: 30rem;
+  object-fit: cover;
+}
+
+.descripcion {
+  margin: 10px 10px 0px 10px;
+  text-align: center;
+  font-size: 20px;
+}

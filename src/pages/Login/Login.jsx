@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
 import styles from './login.module.css';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
-export const Login = () => {
+export default function Login() {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   const [mode, setMode] = useState('signIn');
 
   const handleToggle = () => {
@@ -83,12 +91,15 @@ export const Login = () => {
                   <div className={styles.inputWrap}>
 
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       minLength="4"
                       className={styles.inputField}
                       autoComplete="off"
                       required
                     />
+                    <span className={styles.Eye} onClick={togglePasswordVisibility}>
+                      {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                    </span>
                   </div>
 
                   <input type="submit" value="Iniciar Sesión" className={styles.signBtn} />
@@ -139,12 +150,15 @@ export const Login = () => {
                   <span className={styles.inputTextAbove}><b>Contraseña</b></span>
                   <div className={styles.inputWrap}>
                     <input
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       minLength="4"
                       className={styles.inputField}
                       autoComplete="off"
                       required
                     />
+                    <span className={styles.Eye} onClick={togglePasswordVisibility}>
+                      {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                    </span>
                   </div>
 
                   <input type="submit" value="Registrarme" className={styles.signBtn} />
@@ -169,5 +183,3 @@ export const Login = () => {
 
   )
 }
-
-export default Login
