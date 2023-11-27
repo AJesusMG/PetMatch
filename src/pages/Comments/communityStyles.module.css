@@ -17,6 +17,13 @@ body {
     flex: 95%;
 }
 
+.stickyContainer {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
 .topContainer {
     display: flex;
     flex-direction: row;
@@ -34,7 +41,7 @@ body {
 
 .cardStyle {
     width: 820px;
-    height: 190px;
+    height: 225px;
     margin-left: 20px;
 }
 
@@ -52,6 +59,7 @@ body {
     margin-top: 40px !important;
     margin-left: 10px !important;
     border-bottom: 4px solid orange !important;
+    cursor: pointer;
 }
 
 .lineBlack {

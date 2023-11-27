@@ -1,15 +1,52 @@
 import React, { useState } from "react";
-import { Avatar, Button, Card, TextField } from "@mui/material";
+import { Avatar, Button, Card, Grid, TextField } from "@mui/material";
 import SideBar from "../../../components/SideBar/sideBar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import CommentCard from "../../../components/CommentCard/CommentCard";
 
 import styles from "./communityStyles.module.css";
-import CommentCard from "../../../components/CommentCard/CommentCard";
 
 const handleProfileClick = () => {
   // Agrega aquí la lógica de redirección o acciones específicas del perfil
   console.log("Perfil clickeado");
   // Puedes agregar aquí la lógica de redirección o acciones específicas del perfil
+};
+
+const CommentInfo = [
+  {
+    id: 1,
+    userName: "@a.jesus.g",
+    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
+    numComments: 15,
+  },
+  {
+    id: 2,
+    userName: "@Nutriayapa",
+    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
+    numComments: 15,
+  },
+  {
+    id: 3,
+    userName: "@elcaminodelprogramador",
+    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
+    numComments: 15,
+  },
+  {
+    id: 4,
+    userName: "@elzavaletonga",
+    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
+    numComments: 15,
+  },
+  {
+    id: 5,
+    userName: "@Faker",
+    comment: "¿Como subir de elo a un bronce en LATAM, especificamente LAS?",
+    numComments: 15,
+  },
+];
+
+const handleScrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
 export default function Community() {
@@ -29,25 +66,27 @@ export default function Community() {
         <SideBar />
       </div>
       <div className={styles.catalogContainer}>
-        <div className={styles.iconContainer}>
-          <Avatar
-            alt="Profile Image"
-            src="URL_DE_TU_IMAGEN"
-            onClick={handleProfileClick}
-            className={styles.iconStyle}
-          >
-            <AccountCircleIcon />
-          </Avatar>
-        </div>
-        <div className={styles.cardContainer}>
-          <Card className={styles.cardStyles}>
-            <div>
-              <p className={styles.title}>Comunidad</p>
-              <Button variant="text" className={styles.btnStyle}>
-                Inicio
-              </Button>
-            </div>
-          </Card>
+        <div className={styles.stickyContainer}>
+          <div className={styles.iconContainer}>
+            <Avatar
+              alt="Profile Image"
+              src="URL_DE_TU_IMAGEN"
+              onClick={handleProfileClick}
+              className={styles.iconStyle}
+            >
+              <AccountCircleIcon />
+            </Avatar>
+          </div>
+          <div className={styles.cardContainer}>
+            <Card className={styles.cardStyles}>
+              <div>
+                <p className={styles.title}>Comunidad</p>
+                <Button variant="text" className={styles.btnStyle} onClick={handleScrollToTop}>
+                  Inicio
+                </Button>
+              </div>
+            </Card>
+          </div>
         </div>
         <Card className={styles.cardStyle}>
           <div className={styles.mainContainer}>
@@ -66,7 +105,7 @@ export default function Community() {
                 id="outlined-multiline-flexible"
                 label="Pregunta algo a la comunidad"
                 multiline
-                maxRows={4}
+                maxRows={2}
                 value={textValue}
                 onChange={handleTextChange}
                 inputProps={{
@@ -88,7 +127,13 @@ export default function Community() {
           </div>
         </Card>
         <div className={styles.commentContainer}>
-          <CommentCard />
+          <Grid container spacing={2}>
+            {CommentInfo.map((post, index) => (
+              <Grid item key={index}>
+                <CommentCard {...post} />
+              </Grid>
+            ))}
+          </Grid>
         </div>
       </div>
     </div>
