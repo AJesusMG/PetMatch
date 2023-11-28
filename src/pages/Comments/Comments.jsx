@@ -5,6 +5,7 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CommentCard from "../../../components/CommentCard/CommentCard";
 
 import styles from "./communityStyles.module.css";
+import NewsCard from "../../../components/NewsCard/NewsCard";
 
 const handleProfileClick = () => {
   // Agrega aquí la lógica de redirección o acciones específicas del perfil
@@ -65,77 +66,82 @@ export default function Community() {
       <div className={styles.sideContainer}>
         <SideBar />
       </div>
-      <div className={styles.catalogContainer}>
-        <div className={styles.stickyContainer}>
-          <div className={styles.iconContainer}>
-            <Avatar
-              alt="Profile Image"
-              src="URL_DE_TU_IMAGEN"
-              onClick={handleProfileClick}
-              className={styles.iconStyle}
-            >
-              <AccountCircleIcon />
-            </Avatar>
+      <div className={styles.mainContainer}>
+        <div className={styles.communityContainer}>
+          <div className={styles.stickyContainer}>
+            <div className={styles.cardContainer}>
+              <Card className={styles.cardStyles}>
+                <div>
+                  <p className={styles.title}>Comunidad</p>
+                  <Button variant="text" className={styles.btnStyle} onClick={handleScrollToTop}>
+                    Inicio
+                  </Button>
+                </div>
+              </Card>
+            </div>
           </div>
-          <div className={styles.cardContainer}>
-            <Card className={styles.cardStyles}>
-              <div>
-                <p className={styles.title}>Comunidad</p>
-                <Button variant="text" className={styles.btnStyle} onClick={handleScrollToTop}>
-                  Inicio
-                </Button>
+          <Card className={styles.cardStyle}>
+            <div className={styles.mainContainer}>
+              <div className={styles.avatarContainer}>
+                <Avatar
+                  alt="Profile Image"
+                  src="URL_DE_TU_IMAGEN"
+                  onClick={handleProfileClick}
+                  className={styles.avatarStyle}
+                >
+                  <AccountCircleIcon />
+                </Avatar>
               </div>
-            </Card>
+              <div className={styles.inputContainer}>
+                <TextField
+                  id="outlined-multiline-flexible"
+                  label="Pregunta algo a la comunidad"
+                  multiline
+                  maxRows={2}
+                  value={textValue}
+                  onChange={handleTextChange}
+                  inputProps={{
+                    maxLength: maxCharacterLimit,
+                  }}
+                  className={styles.inputStyle}
+                />
+                <div className={styles.counterContainer}>
+                  <p className={styles.characterCounter}>
+                    {textValue.length}/{maxCharacterLimit}
+                  </p>
+                </div>
+                <div className={styles.btnContainer}>
+                  <Button className={styles.postBtn} variant="contained">
+                    Publicar
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+          <div className={styles.commentContainer}>
+            <Grid container spacing={2}>
+              {CommentInfo.map((post, index) => (
+                <Grid item key={index}>
+                  <CommentCard {...post} />
+                </Grid>
+              ))}
+            </Grid>
           </div>
         </div>
-        <Card className={styles.cardStyle}>
-          <div className={styles.mainContainer}>
-            <div className={styles.avatarContainer}>
-              <Avatar
-                alt="Profile Image"
-                src="URL_DE_TU_IMAGEN"
-                onClick={handleProfileClick}
-                className={styles.avatarStyle}
-              >
-                <AccountCircleIcon />
-              </Avatar>
-            </div>
-            <div className={styles.inputContainer}>
-              <TextField
-                id="outlined-multiline-flexible"
-                label="Pregunta algo a la comunidad"
-                multiline
-                maxRows={2}
-                value={textValue}
-                onChange={handleTextChange}
-                inputProps={{
-                  maxLength: maxCharacterLimit,
-                }}
-                className={styles.inputStyle}
-              />
-              <div className={styles.counterContainer}>
-                <p className={styles.characterCounter}>
-                  {textValue.length}/{maxCharacterLimit}
-                </p>
-              </div>
-              <div className={styles.btnContainer}>
-                <Button className={styles.postBtn} variant="contained">
-                  Publicar
-                </Button>
-              </div>
-            </div>
-          </div>
-        </Card>
-        <div className={styles.commentContainer}>
-          <Grid container spacing={2}>
-            {CommentInfo.map((post, index) => (
-              <Grid item key={index}>
-                <CommentCard {...post} />
-              </Grid>
-            ))}
-          </Grid>
+        <div className={styles.newsCard}>
+          <NewsCard />
         </div>
       </div>
+      <div className={styles.iconContainer}>
+        <Avatar
+          alt="Profile Image"
+          src="URL_DE_TU_IMAGEN"
+          onClick={handleProfileClick}
+          className={styles.iconStyle}
+        >
+          <AccountCircleIcon />
+        </Avatar>
+      </div>  
     </div>
   );
 }

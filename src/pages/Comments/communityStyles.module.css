@@ -13,8 +13,13 @@ body {
     flex: 5%;
 }
 
-.catalogContainer {
-    flex: 95%;
+.communityContainer {
+    flex: 90%;
+}
+
+.newsCard {
+    flex: 23%;
+    margin-top: 100px;
 }
 
 .stickyContainer {
@@ -119,9 +124,9 @@ body {
 
 .iconContainer {
     display: flex;
-    justify-content: flex-end;
-    padding-right: 70px;
+    justify-content: end;
     padding-top: 20px;
+    padding-right: 20px;
 }
 
 .iconStyle {
