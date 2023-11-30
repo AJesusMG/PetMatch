@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './login.module.css';
+import styles from './loginStyles.module.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 

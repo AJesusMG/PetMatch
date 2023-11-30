@@ -34,4 +34,13 @@
   .Card{
     margin-bottom: 20rem !important;
   }
+
+  .menuContainer {
+    width: 280px;
+    height: 185px;
+    margin-top: 130px;
+    margin-left: 67%;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra solo en el lado derecho */
+  }
   

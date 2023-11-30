@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.parentElement {
+    display: inline-block;
+    width: 340px;
+}
+
+.card {
+    width: 280px;
+    height: 185px;
+}
+
+.myAccountCard__userInfo {
+    display: flex;
+    align-items: center;
+}
+
+.avatarContainer {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.infoContainer {
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.avatarStyle {
+    width: 70px !important;
+    height: 70px !important;
+}
+
+.userStyle {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.emailStyle {
+    font-size: 12px;
+}
+
+.myAccountCard__separator {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+
+.myAccountCard__actions {
+    background-color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+.myAccountCard__actions> :not(:first-of-type) {
+    margin-left: 0 !important; /* Anula el margen izquierdo */
+}
+
+.myAccountCard__actions> :not(:last-child) {
+    margin-bottom: 5px !important;
+}
+
+.myAccountCard__button {
+    color: black !important;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start !important;
+    text-transform: capitalize !important;
+    font-size: 15px !important;
+    position: relative; /* Agrega esta línea para que funcione el pseudo-elemento ::before */
+}
+
+.myAccountCard__button:hover {
+    background-color: #FEAE21 !important; /* Cambia el color de fondo al hacer hover */
+    color: white !important; /* Cambia el color del texto al hacer hover */
+}
+
+.myAccountCard__action:hover .MuiSvgIcon-root {
+    color: white;
+}
+
+.myAccountCard__button::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.4s ease-in-out;
+}
+
+
+.myAccountCard__button:hover::before {
+    width: 100%;
+}
+
+.myAccountCard__link {
+    width: 100%;
+    text-decoration: none; /* Deshabilita la subrayado del enlace al hacer hover */
+}
+

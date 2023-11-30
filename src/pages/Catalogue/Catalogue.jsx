@@ -2,8 +2,9 @@ import React from "react";
 import { Button, Grid } from "@mui/material";
 import SideBar from "../../../components/SideBar/sideBar";
 import PostCard from "../../../components/PostCard/PostCard";
-import styles from "./catalogueStyles.module.css";
 import { Link } from "react-router-dom";
+
+import styles from "./catalogueStyles.module.css";
 
 const PostInfo = [
   {
