@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Avatar, Button, Card, Grid, TextField } from "@mui/material";
+import { Avatar, Button, Card, Fade, Grid, Modal, TextField, Backdrop } from "@mui/material";
 import SideBar from "../../../components/SideBar/sideBar";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CommentCard from "../../../components/CommentCard/CommentCard";
+import NewsCard from "../../../components/NewsCard/NewsCard";
+import LittleNewsCard from "../../../components/LittleNewsCard/LittleNewsCard";
+import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
 
 import styles from "./communityStyles.module.css";
-import NewsCard from "../../../components/NewsCard/NewsCard";
 
 const handleProfileClick = () => {
   // Agrega aquí la lógica de redirección o acciones específicas del perfil
@@ -46,6 +48,14 @@ const CommentInfo = [
   },
 ];
 
+const ProfileInfo = [
+  {
+    id: 1,
+    userName: "Nutriayapa",
+    email: "alanj.ajmg@outlook.com"
+  }
+]
+
 const handleScrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
@@ -61,6 +71,16 @@ export default function Community() {
     }
   };
 
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+
+  const handleProfileClick = () => {
+    setProfileMenuOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setProfileMenuOpen(false);
+  };
+
   return (
     <div className={styles.containerFlex}>
       <div className={styles.sideContainer}>
@@ -69,16 +89,14 @@ export default function Community() {
       <div className={styles.mainContainer}>
         <div className={styles.communityContainer}>
           <div className={styles.stickyContainer}>
-            <div className={styles.cardContainer}>
-              <Card className={styles.cardStyles}>
-                <div>
-                  <p className={styles.title}>Comunidad</p>
-                  <Button variant="text" className={styles.btnStyle} onClick={handleScrollToTop}>
-                    Inicio
-                  </Button>
-                </div>
-              </Card>
-            </div>
+            <Card className={styles.cardStyles}>
+              <div>
+                <p className={styles.title}>Comunidad</p>
+                <Button variant="text" className={styles.btnStyle} onClick={handleScrollToTop}>
+                  Inicio
+                </Button>
+              </div>
+            </Card>
           </div>
           <Card className={styles.cardStyle}>
             <div className={styles.mainContainer}>
@@ -128,8 +146,11 @@ export default function Community() {
             </Grid>
           </div>
         </div>
-        <div className={styles.newsCard}>
+        <div className={`${styles.newsCard} ${styles.fixedNewsCard}`}>
           <NewsCard />
+        </div>
+        <div className={`${styles.lNewsCard} ${styles.lFixedNewsCard}`}>
+          <LittleNewsCard />
         </div>
       </div>
       <div className={styles.iconContainer}>
@@ -141,7 +162,29 @@ export default function Community() {
         >
           <AccountCircleIcon />
         </Avatar>
-      </div>  
+      </div>
+      <Modal
+        open={isProfileMenuOpen}
+        onClose={handleModalClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+          style: { backgroundColor: "transparent" },
+        }}
+      >
+        <Fade in={isProfileMenuOpen}>
+          <div className={styles.menuContainer}>
+            <Grid>
+              {ProfileInfo.map((post, index) => (
+                <Grid item key={index}>
+                  <ProfileMenu {...post} />
+                </Grid>
+              ))}
+            </Grid>
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 }

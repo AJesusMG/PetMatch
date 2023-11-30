@@ -1,12 +1,14 @@
-import React from "react";
-import { Avatar, Grid } from "@mui/material";
+import React, { useState } from "react";
+import { Avatar, Grid, Modal, Backdrop, Fade } from "@mui/material";
 import SideBar from "../../../components/SideBar/sideBar";
 import PostCard from "../../../components/PostCard/PostCard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
 
 import styles from "./catalogStyles.module.css";
+
 
 const PostInfo = [
   {
@@ -222,7 +224,25 @@ const petBreeds = [
   { type: 'Bird', breed: 'Canary' },
 ];
 
+const ProfileInfo = [
+  {
+    id: 1,
+    userName: "Nutriayapa",
+    email: "alanj.ajmg@outlook.com"
+  }
+]
+
 export default function Catalog() {
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
+
+  const handleProfileClick = () => {
+    setProfileMenuOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setProfileMenuOpen(false);
+  };
+
   return (
     <div className={styles.containerFlex}>
       <div className={styles.sideContainer}>
@@ -268,6 +288,28 @@ export default function Catalog() {
           </Grid>
         </div>
       </div>
+      <Modal
+        open={isProfileMenuOpen}
+        onClose={handleModalClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+          style: { backgroundColor: "transparent" },
+        }}
+      >
+        <Fade in={isProfileMenuOpen}>
+          <div className={styles.menuContainer}>
+          <Grid>
+            {ProfileInfo.map((post, index) => (
+              <Grid item key={index}>
+                <ProfileMenu {...post} />
+              </Grid>
+            ))}
+          </Grid>
+          </div>
+        </Fade>
+      </Modal>
     </div>
   );
 }

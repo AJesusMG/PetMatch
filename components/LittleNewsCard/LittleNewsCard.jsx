@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import styles from './newsCardStyles.module.css'
+import styles from './littleNewsCardStyles.module.css'
 
-export default function NewsCard() {
+export default function LittleNewsCard() {
     return (
         <Card className={styles.cardStyle}>
             <div className={styles.mainContainer}>
@@ -22,20 +22,6 @@ export default function NewsCard() {
                 </div>
                 <div className={styles.newsContainer}>
                     <p className={styles.newsStyle}>Los Pitbull son agresivos?...</p>
-                </div>
-                <div className={styles.subContainer}>
-                    <p className={styles.subStyle}>Marvin McKinney</p>
-                    <p className={styles.subStyle}>5 de Octubre...</p>
-                </div>
-                <div className={styles.newsContainer}>
-                    <p className={styles.newsStyle}>La verdadera naturales de los Corgis...</p>
-                </div>
-                <div className={styles.subContainer}>
-                    <p className={styles.subStyle}>Nutriayapa</p>
-                    <p className={styles.subStyle}>20 de Octubre...</p>
-                </div>
-                <div className={styles.newsContainer}>
-                    <p className={styles.newsStyle}>¿Cuál es la mejor raza de perros?...</p>
                 </div>
             </div>
         </Card>

@@ -2,10 +2,9 @@ import React from "react";
 import { Button, Card, Chip, Typography } from "@mui/material";
 import { AccountCircle, Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import Dog from "../../public/img/Mopri.png";
+import styles from "./adoptFullPostInProfileStyles.module.css";
 
-import styles from "./adoptFullPostStyles.module.css";
-
-const AdoptFullPost = (props) => {
+const AdoptFullPostInProfile = (props) => {
   return (
     <Card className={styles.Card} key={props.id}>
       <div className={styles.Content}>
@@ -16,7 +15,7 @@ const AdoptFullPost = (props) => {
           <div className={styles.topSection}>
             <div className={styles.userInfo}>
               <div><AccountCircle style={{ fontSize: 50 }} /></div>
-              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}<br />{props.location}</Typography>
+              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}</Typography>
             </div>
             <Button className={styles.reportBtn} variant="text">Reportar</Button>
           </div>
@@ -49,10 +48,13 @@ const AdoptFullPost = (props) => {
               </div>
             </div>
           </div>
+          <div className={styles.btnContainer}>
+            <Button className={styles.adoptBtn} variant="contained">Adoptado</Button>
+          </div>
         </div>
       </div>
     </Card>
   );
 };
 
-export default AdoptFullPost;
+export default AdoptFullPostInProfile;

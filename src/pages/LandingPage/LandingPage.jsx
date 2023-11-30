@@ -5,8 +5,8 @@ import Button from "@mui/material/Button";
 import CardImage from '../../../public/img/Perro_F.jpg';
 import styles from "./landingPage.module.css";
 import Hero from "../../../public/img/Hero.png";
-import AdoptaCard from "../../../components/AdoptaCard/adoptaCard";
 import Footer from "../../../components/Footer/Footer";
+import AdoptCard from "../../../components/AdoptCard/AdoptCard";
 
 const cardData = [
   {
@@ -32,7 +32,7 @@ export default function LandingPage() {
       <div>
         <p className={styles.titleAdopta}>Adopta +</p>
         {cardData.map((data, index) => (
-              <AdoptaCard key={index} {...data} />
+              <AdoptCard key={index} {...data} />
             ))}
       </div>
       <div className={styles.btnContainer}><Button className={styles.btnCatalogoStyle} variant="contained">Ver Catalogo</Button></div>

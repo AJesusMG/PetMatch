@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "@mui/material";
-import styles from "./adoptaCardStyles.module.css";
+import styles from "./adoptCardStyles.module.css";
 
 
 
-const AdoptaCard = ({ user, img, descripcion }) => {
+const AdoptCard = ({ user, img, descripcion }) => {
   return (
   <div >
     <div className={styles.cardContainer}>
@@ -20,4 +20,4 @@ const AdoptaCard = ({ user, img, descripcion }) => {
 
 
   
-export default AdoptaCard;
+export default AdoptCard;

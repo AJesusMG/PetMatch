@@ -14,18 +14,35 @@ body {
 }
 
 .communityContainer {
-    flex: 90%;
+    flex: 85%;
 }
 
 .newsCard {
+    flex: 10%;
+}
+
+.fixedNewsCard {
+    position: fixed;
+    top: 35%;
+    right: 50px;
+    transform: translateY(-50%);
+}
+
+.lNewsCard {
     flex: 23%;
-    margin-top: 100px;
+}
+
+.lFixedNewsCard {
+    position: fixed;
+    top: 80%;
+    right: 50px;
+    transform: translateY(-50%);
 }
 
 .stickyContainer {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 820;
     background-color: white;
 }
 
@@ -131,4 +148,15 @@ body {
 
 .iconStyle {
     color: black !important;
+    cursor: pointer;
 }
+
+.menuContainer {
+    width: 280px;
+    height: 390px;
+    margin-top: 60px;
+    margin-left: 74%;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra solo en el lado derecho */
+  }
+  

@@ -146,7 +146,7 @@ export default function SideBar() {
           </ListItem>
         </List>
         <List>
-          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Comments") }}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Community") }}>
             <ListItemButton
               sx={{
                 minHeight: 68,

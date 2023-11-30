@@ -48,4 +48,16 @@ body {
 
 .iconStyle {
   color: black !important;
+  cursor: pointer;
 }
+
+.menuContainer {
+  width: 280px;
+  height: 390px;
+  margin-top: 60px;
+  margin-left: 74%;
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra solo en el lado derecho */
+}
+
+

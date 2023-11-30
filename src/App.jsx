@@ -5,12 +5,13 @@ import Login from "./pages/Login/Login";
 import SignUp from "./pages/SignUp/SignUp";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import MyAccount from "./pages/MyAccount/MyAccount";
-import Comments from "./pages/Comments/Comments";
+import Community from "./pages/Community/Community";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import UserConfig from './pages/userConfig/userConfig';
 import AdminReports from './pages/AdminReports/AdminReports';
 import Questionnaire from './pages/Questionnaire/Questionnaire';
 import Catalog from './pages/Catalog/Catalog';
+import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 
 function App() {
   return (
@@ -20,13 +21,14 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Catalogue" element={<Catalogue />} />
-        <Route path="/Comments" element={<Comments />} />
+        <Route path="/Community" element={<Community />} />
         <Route path="/MyAccount" element={<MyAccount />} />
         <Route path="/ErrorPage" element={<ErrorPage />} />
         <Route path="/UserConfig" element={<UserConfig />} />
         <Route path="/AdminReports" element={<AdminReports />} />
         <Route path="/Questionnaire" element={<Questionnaire />} />
         <Route path="/Catalog" element={<Catalog />} />
+        <Route path="/LoginAdmin" element={<LoginAdmin />} />
         
       </Routes>
     </Router>
