@@ -1,5 +1,4 @@
 
-
 /* Estilos para el encabezado h1 */
 h1 {
   margin-top: 3rem;
@@ -12,9 +11,9 @@ h1 {
 }
 
 /* Estilos para la barra lateral */
-.sideBar {
+/* .sideBar {
   flex: 5%;
-}
+} */
 
 /* Estilos para el contenedor de elementos (imagen y botón) */
 .itemsContainer {
