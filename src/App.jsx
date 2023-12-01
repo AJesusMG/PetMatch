@@ -29,7 +29,6 @@ function App() {
         <Route path="/Questionnaire" element={<Questionnaire />} />
         <Route path="/Catalog" element={<Catalog />} />
         <Route path="/LoginAdmin" element={<LoginAdmin />} />
-        
       </Routes>
     </Router>
   );
