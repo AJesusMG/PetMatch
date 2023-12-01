@@ -5,52 +5,49 @@ import Dog from "../../public/img/Mopri.png";
 
 import styles from "./adoptFullPostStyles.module.css";
 
-const AdoptFullPost = ({ username }) => {
+const AdoptFullPost = (props) => {
   return (
-    <Card className={styles.Card}>
+    <Card className={styles.Card} key={props.id}>
       <div className={styles.Content}>
         <div>
-          <img className={styles.Dog} src={Dog} alt="Dog" />
+          <img className={styles.Dog} src={props.img} alt="Imagen de tu mascota" />
         </div>
         <div className={styles.mainContainer}>
           <div className={styles.topSection}>
             <div className={styles.userInfo}>
               <div><AccountCircle style={{ fontSize: 50 }} /></div>
-              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16, fontFamily: "Poppins" }}>@a.jesus.g</Typography>
+              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}<br />{props.location}</Typography>
             </div>
             <Button className={styles.reportBtn} variant="text">Reportar</Button>
           </div>
           <div className={styles.infoContainer}>
             <Typography className={styles.infoText}>
-              Hoy quiero presentarles a este hermoso perro blanco que ha llegado a mi vida
-              y está en busca de un nuevo hogar. Se trata de un encantador Husky de un año
-              de edad que ha conquistado nuestros corazones con su belleza y personalidad juguetona.
+              {props.description && props.description.length > 290
+                ? `${props.description.slice(0, 240)}`
+                : props.description}
             </Typography>
           </div>
           <div className={styles.tagsContainer}>
-            <Typography style={{ fontWeight: "bold", fontSize: 20, fontFamily: "Poppins" }}>Tags</Typography>
+            <Typography style={{ fontWeight: "bold", fontSize: 20 }}>Tags</Typography>
             <div className={styles.tags}>
-              <Chip label="Husky" variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
-              <Chip label="Grande" variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
-              <Chip label=".5 - 1 año" variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
+              <Chip label={props.race} variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
+              <Chip label={props.size} variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
+              <Chip label={props.age} variant="outlined" style={{ borderColor: "#FEAE21", borderWidth: "3px", fontSize: 15 }} />
             </div>
           </div>
           <div className={styles.contactContainer}>
-            <Typography style={{ fontWeight: "bold", fontSize: 20, fontFamily: "Poppins" }}>Contáctame</Typography>
+            <Typography style={{ fontWeight: "bold", fontSize: 20 }}>Contáctame</Typography>
             <div className={styles.contactInfo}>
               <div className={styles.socialStyle}><Instagram />
-                <Typography style={{ marginLeft: "10px", fontFamily: "Poppins", fontWeight: "bold" }}>a.jesus.g</Typography>
+                <Typography style={{ marginLeft: "10px", fontWeight: "bold" }}>{props.instagram}</Typography>
               </div>
               <div className={styles.socialStyle}><WhatsApp style={{ marginTop: "10px" }} />
-                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontFamily: "Poppins", fontWeight: "bold" }}>2712452978</Typography>
+                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontWeight: "bold" }}>{props.whatsapp}</Typography>
               </div>
               <div className={styles.socialStyle}><Facebook style={{ marginTop: "10px" }} />
-                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontFamily: "Poppins", fontWeight: "bold" }}>Alan Morales</Typography>
+                <Typography style={{ marginLeft: "10px", marginTop: "10px", fontWeight: "bold" }}>{props.facebook}</Typography>
               </div>
             </div>
-          </div>
-          <div className={styles.btnContainer}>
-          <Button className={styles.adoptBtn} variant="contained">Adoptado</Button>
           </div>
         </div>
       </div>

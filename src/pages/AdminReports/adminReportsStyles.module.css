@@ -1,0 +1,46 @@
+.main{
+    background-color: rgb(248, 248, 248);
+}
+.NavItems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    align-items: center;
+  }
+  
+  .iconContainer {
+    flex: 5%;
+
+  }
+
+  .iconStyle{
+    height: 6rem !important;
+    width: 6rem !important;
+    margin-top: 2.5rem !important;
+    margin-left: 24rem !important;
+    margin-right: 8rem !important;
+    cursor: pointer;
+  }
+  
+  .Title {
+    flex: 95%;
+    width: 100%;
+    margin-left: 8rem;
+    margin-right: 20rem;
+    color: #FEAE21;
+  }
+
+  .Card{
+    margin-bottom: 20rem !important;
+  }
+
+  .menuContainer {
+    width: 280px;
+    height: 185px;
+    margin-top: 130px;
+    margin-left: 67%;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra solo en el lado derecho */
+  }
+  
