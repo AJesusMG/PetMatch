@@ -23,14 +23,14 @@ h1 {
 
 /* Estilos para el contenedor de elementos (imagen y botón) */
 .itemsContainer {
-    flex: 35%;
+    flex: 25%;
     display: flex;
     flex-direction: column;
 }
 
 /* Estilos para el contenedor del formulario */
 .formContainer {
-    flex: 60%;
+    flex: 70%;
     display: flex;
     flex-direction: column;
     padding: 2rem;
@@ -44,35 +44,28 @@ h1 {
     align-items: center;
 }
 
+.iconStyle {
+    border-radius: 50px!important;
+    width: 25rem!important;
+    height: 30rem!important;
+    margin-left: 6rem;
+    margin-right: 4rem;
+    margin-top: 12rem;
+    margin-bottom: 4.5rem;
+  }
+
 /* Estilos para el contenedor del botón */
 .buttonContainer {
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-top: 18rem;
+    margin-top: 10rem;
     margin-right: 5rem;
 }
 
-/* Estilos para el contenedor de la contraseña y el botón */
-.passwordContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-}
 
-/* Estilos para el botón de la contraseña */
-.btnPassword {
-    width: 23%;
-    height: 2.5rem;
-    background-color: #FEAE21;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    font-size: 0.8rem;
-    margin-left: 10px;
-}
+
+
 
 /* Estilos para la imagen del perfil */
 .profile {
@@ -85,12 +78,6 @@ h1 {
     transition: filter 0.25s ease;
 }
 
-/* Estilos para la imagen del perfil con hover */
-.profile:hover {
-    filter: brightness(50%);
-    /* Oscurecer al 80% cuando se hace hover */
-    position: relative;
-}
 
 /* Estilos para el mensaje "Cambiar foto" en hover */
 .changePhotoMessage {
@@ -111,15 +98,6 @@ h1 {
     /* Evitar que afecte los clics */
     text-decoration: none;
 }
-
-/* Estilos para el contenedor de la imagen y el mensaje "Cambiar foto" */
-.imageContainer:hover .changePhotoMessage {
-    opacity: 1;
-    /* Mostrar el mensaje en hover */
-    pointer-events: auto;
-    /* Permitir que afecte los clics */
-}
-
 
 
 /* Estilos para la entrada de texto personalizada */
@@ -149,7 +127,7 @@ h1 {
 /* Estilos para el formulario */
 .form {
     flex: 1;
-    max-width: 80%;
+    max-width: 70%;
     margin: 0;
 }
 

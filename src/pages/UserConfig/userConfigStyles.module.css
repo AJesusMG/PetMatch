@@ -1,4 +1,6 @@
-
+body{
+  display: block !important;
+}
 
 /* Estilos para el encabezado h1 */
 h1 {

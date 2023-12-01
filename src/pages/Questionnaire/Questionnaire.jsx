@@ -1,6 +1,8 @@
 import React from "react";
 import SideBar from "../../../components/SideBar/sideBar";
 import styles from "./questionnaireStyles.module.css";
+import Profile from "../../../public/img/Questionnaire.jpg";
+import {Avatar} from "@mui/material";
 
 export default function Questionnaire() {
   return (
@@ -76,9 +78,12 @@ export default function Questionnaire() {
         </form>
       </div>
       <div className={styles.itemsContainer}>
-        <div className={styles.imageContainer}>
-          <img src="./img/AdoptMe.jpeg" alt="" className={styles.profile} />
-          
+        <div className={styles.iconContainer}>
+          <Avatar
+              alt="Profile Image"
+              src={Profile}
+              className={styles.iconStyle}
+            />
         </div>
         <div className={styles.buttonContainer}>
           <button type="submit" className={styles.saveButton}>
