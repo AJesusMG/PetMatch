@@ -6,6 +6,7 @@ import CommentCard from "../../../components/CommentCard/CommentCard";
 import NewsCard from "../../../components/NewsCard/NewsCard";
 import LittleNewsCard from "../../../components/LittleNewsCard/LittleNewsCard";
 import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
+import Profile from "../../../public/img/dog_1.png";
 
 import styles from "./communityStyles.module.css";
 
@@ -103,7 +104,7 @@ export default function Community() {
               <div className={styles.avatarContainer}>
                 <Avatar
                   alt="Profile Image"
-                  src="URL_DE_TU_IMAGEN"
+                  src={Profile}
                   onClick={handleProfileClick}
                   className={styles.avatarStyle}
                 >
@@ -156,7 +157,7 @@ export default function Community() {
       <div className={styles.iconContainer}>
         <Avatar
           alt="Profile Image"
-          src="URL_DE_TU_IMAGEN"
+          src={Profile}
           onClick={handleProfileClick}
           className={styles.iconStyle}
         >

@@ -10,6 +10,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import NearMeIcon from '@mui/icons-material/NearMe';
 import QuizIcon from '@mui/icons-material/Quiz';
+import Profile from "../../public/img/dog_1.png";
 
 import styles from "./profileMenuStyles.module.css";
 
@@ -17,7 +18,7 @@ const ProfileMenu = (props) => {
     return (
         <Card className={styles.card} key={props.id}>
             <CardContent className={styles.myAccountCard__userInfo}>
-                <div className={styles.avatarContainer}><Avatar className={styles.avatarStyle} /></div>
+                <div className={styles.avatarContainer}><Avatar className={styles.avatarStyle} src={Profile} /></div>
                 <div className={styles.infoContainer}>
                     <p className={styles.userStyle}>{props.userName}</p>
                     <p className={styles.emailStyle}>{props.email}</p>
