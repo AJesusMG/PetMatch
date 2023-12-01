@@ -76,6 +76,7 @@ body {
 .Dog {
   width: 590px;
   height: 639px;
+  object-fit: cover;
 }
 
 .btnContainer {

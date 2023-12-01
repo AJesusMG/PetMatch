@@ -1,8 +1,9 @@
 import React from "react";
-import { Card, Typography } from "@mui/material";
+import { Card, Typography, Avatar } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
 import AddCommentIcon from "@mui/icons-material/AddComment";
+import Dog from "../../public/img/Mopri.png";
 
 import styles from "./commentCardStyles.module.css";
 
@@ -11,7 +12,7 @@ const CommentCard = (props) => {
     <Card className={styles.Card} key={props.id}>
       <div className={styles.userInfo}>
         <div className={styles.avatarContainer}>
-          <AccountCircle className={styles.iconStyle} />
+          <Avatar src={Dog} style={{ width: 50, height: 50,  marginTop: "10px" }} className={styles.iconStyle} />
         </div>
         <div className={styles.userContainer}>
           <p className={styles.userStyle}>{props.userName}</p>

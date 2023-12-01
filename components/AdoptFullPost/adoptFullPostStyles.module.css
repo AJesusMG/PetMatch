@@ -22,6 +22,7 @@ body {
 .topSection {
   display: flex;
   justify-content: space-between;
+  padding-right: 5px;
 }
 
 .userInfo {
@@ -76,4 +77,5 @@ body {
 .Dog {
   width: 590px;
   height: 639px;
+  object-fit: cover;
 }
