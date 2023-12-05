@@ -8,9 +8,9 @@ import Autocomplete from "@mui/material/Autocomplete";
 import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
 import AdoptFullPost from '../../../components/AdoptFullPost/AdoptFullPost'
 import Profile from "../../../public/img/dog_1.png";
+import ReportCard from "../../../components/ReportCard/ReportCard";
 
 import styles from "./catalogStyles.module.css";
-
 
 const PostInfo = [
   {
@@ -121,6 +121,7 @@ export default function Catalog() {
     facebook: "Alan Morales",
 
   });
+  const [isReportModalOpen, setReportModalOpen] = useState(false);
 
   const handleProfileClick = () => {
     setProfileMenuOpen(true);
@@ -146,6 +147,10 @@ export default function Catalog() {
 
   const handleAdoptModalClose = () => {
     setAdoptModalOpen(false);
+  };
+
+  const handleReportButtonClick = () => {
+    setReportModalOpen(true);
   };
 
   return (
@@ -192,6 +197,7 @@ export default function Catalog() {
             ))}
           </Grid>
         </div>
+        {/* Modal de AdoptFullPost */}
         <Modal
           open={isAdoptModalOpen}
           onClose={handleAdoptModalClose}
@@ -206,12 +212,13 @@ export default function Catalog() {
             <div className={styles.modalBackdrop} onClick={handleAdoptModalClose}>
               <div className={styles.modalContainer} onClick={(e) => e.stopPropagation()}>
                 {/* Pasa la información del post seleccionado al componente AdoptFullPost */}
-                {selectedPost && <AdoptFullPost {...selectedPost} />}
+                {selectedPost && <AdoptFullPost {...selectedPost} onReportButtonClick={handleReportButtonClick} />}
               </div>
             </div>
           </Fade>
         </Modal>
       </div>
+      {/* Modal de ProfileMenu */}
       <Modal
         open={isProfileMenuOpen}
         onClose={handleModalClose}
@@ -231,6 +238,25 @@ export default function Catalog() {
                 </Grid>
               ))}
             </Grid>
+          </div>
+        </Fade>
+      </Modal>
+      {/* Modal de ReportCard */}
+      <Modal
+        open={isReportModalOpen}
+        onClose={() => setReportModalOpen(false)}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+          style: { backgroundColor: "rgba(0, 0, 0, 0.5)" },
+        }}
+      >
+        <Fade in={isReportModalOpen}>
+          <div className={styles.reportModalBackdrop} onClick={() => setReportModalOpen(false)}>
+            <div className={styles.reportModalContainer} onClick={(e) => e.stopPropagation()}>
+              <ReportCard />
+            </div>
           </div>
         </Fade>
       </Modal>

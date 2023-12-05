@@ -18,7 +18,6 @@ const AdoptFullPostReport = (props) => {
               <div><Avatar src={Dog} style={{ width: 50, height: 50,  marginTop: "10px" }}  /></div>
               <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}</Typography>
             </div>
-            <Button className={styles.reportBtn} variant="text">Reportar</Button>
           </div>
           <div className={styles.infoContainer}>
             <Typography className={styles.infoText}>

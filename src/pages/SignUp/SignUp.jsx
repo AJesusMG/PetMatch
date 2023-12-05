@@ -4,6 +4,8 @@ import AdoptFullPost from '../../../components/AdoptFullPost/AdoptFullPost'
 import AdoptFullPostInProfile from '../../../components/AdoptFullPostInProfile/AdoptFullPostInProfile'
 import { Grid } from '@mui/material'
 import AdoptFullPostReport from '../../../components/AdoptFullPostReport/AdoptFullPostReport'
+import ReportCard from '../../../components/ReportCard/ReportCard'
+import AnswerCard from '../../../components/AnswerCard/AnswerCard'
 
 const FullPostInfo = [
   {
@@ -54,13 +56,15 @@ export const SignUp = () => {
           </Grid>
         ))}
       </Grid> */}
-      <Grid>
+      {/* <Grid>
         {FullPostInfoInProfile.map((post, index) => (
           <Grid item key={index}>
             <AdoptFullPostInProfile {...post} />
           </Grid>
         ))}
-      </Grid>
+      </Grid> */}
+      {/* <ReportCard /> */}
+      <AnswerCard />
     </div>
   )
 }
