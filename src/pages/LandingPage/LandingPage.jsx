@@ -2,11 +2,20 @@ import React from "react";
 import NavBar from "../../../components/NavBar/NavBar";
 import MascotaCard from "../../../components/MascotaCard/mascotaCard";
 import Button from "@mui/material/Button";
-
+import CardImage from '../../../public/img/Perro_F.jpg';
 import styles from "./landingPage.module.css";
 import Hero from "../../../public/img/Hero.png";
 import AdoptaCard from "../../../components/AdoptaCard/adoptaCard";
 import Footer from "../../../components/Footer/Footer";
+
+const cardData = [
+  {
+    user: "@tuusuario",
+    img: CardImage,
+    descripcion: "Tu descripción personalizada",
+  },
+  
+];
 
 
 export default function LandingPage() {
@@ -22,7 +31,9 @@ export default function LandingPage() {
       </div>
       <div>
         <p className={styles.titleAdopta}>Adopta +</p>
-        <AdoptaCard />
+        {cardData.map((data, index) => (
+              <AdoptaCard key={index} {...data} />
+            ))}
       </div>
       <div className={styles.btnContainer}><Button className={styles.btnCatalogoStyle} variant="contained">Ver Catalogo</Button></div>
       <Footer />

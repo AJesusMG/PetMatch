@@ -5,7 +5,7 @@ import Link from "@mui/material/Link";
 import Button from "@mui/material/Button";
 
 import styles from "./navbarStyles.module.css";
-import Logo from "../../public/img/logo.svg";
+import Logo from "../../public/Logo.svg";
 
 const NavBar = () => {
   return (
