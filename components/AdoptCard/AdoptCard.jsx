@@ -12,7 +12,7 @@ const AdoptCard = (props) => {
 
   return (
     <div>
-      <div className={styles.cardContainer}>
+      <div className={styles.cardContainer} key={props.id}>
         <Card className={styles.Card} onClick={handleClick}>
           <p className={styles.User}>{props.userName}</p>
           <img className={styles.Animal} src={props.img} alt="Animal" />

@@ -58,13 +58,13 @@ body {
 .cardStyles {
     width: 820px;
     height: 225px;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 .cardStyle {
     width: 820px;
     height: 225px;
-    margin-left: 20px;
+    margin-left: 50px;
     margin-top: 20%;
 }
 
@@ -138,6 +138,7 @@ body {
 
 .commentContainer {
     margin-top: 15px;
+    margin-left: 30px;
 }
 
 .iconContainer {

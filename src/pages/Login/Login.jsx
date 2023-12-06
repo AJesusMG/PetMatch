@@ -35,7 +35,7 @@ export default function Login() {
     // Verifica si se obtuvo una respuesta válida
     if (response.code === 200) {
       // Realiza la redirección a la página deseada (por ejemplo, '/Community')
-      navigate('/');
+      navigate('/Catalogue');
     } else {
       // Muestra la notificación en caso de error
       toast(response.message || 'Error desconocido', {
