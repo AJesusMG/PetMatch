@@ -25,7 +25,7 @@ export default function Footer() {
 
                     <Grid item xs={12} sm={4} className={styles.sectionLinks} my={3.5}>
                         <Typography variant="body2" className="" gutterBottom >
-                            <Link href="#" className={styles.linkDecoration}>Términos y Condiciones</Link>
+                            <Link href="/TermsConditions" className={styles.linkDecoration}>Términos y Condiciones</Link>
                         </Typography>
                         <Typography variant="body2" className="" gutterBottom>
                             <Link href="#" className={styles.linkDecoration}>
@@ -35,12 +35,12 @@ export default function Footer() {
                     </Grid>
                     <Grid item xs={12} sm={4} my={3.5}>
                         <Typography variant="body2">
-                            <Link href="#" className={styles.linkDecoration}>
+                            <Link href="/AboutUs" className={styles.linkDecoration}>
                                 ¿Quiénes somos?
                             </Link>
                         </Typography>
                         <Typography variant="body2" className="" gutterBottom>
-                            <Link href="#" className={styles.linkDecoration}>
+                            <Link href="/Catalog" className={styles.linkDecoration}>
                                 Catalogo
                             </Link>
                         </Typography>

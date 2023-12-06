@@ -3,8 +3,6 @@ import { Avatar, Grid, Modal, Backdrop, Fade } from "@mui/material";
 import SideBar from "../../../components/SideBar/sideBar";
 import PostCard from "../../../components/PostCard/PostCard";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
 import AdoptFullPost from '../../../components/AdoptFullPost/AdoptFullPost'
 import Profile from "../../../public/img/dog_1.png";
@@ -81,23 +79,6 @@ const handleProfileClick = () => {
   // Puedes agregar aquí la lógica de redirección o acciones específicas del perfil
 };
 
-const petBreeds = [
-  { type: 'Dog', breed: 'Labrador Retriever' },
-  { type: 'Dog', breed: 'German Shepherd' },
-  { type: 'Dog', breed: 'Golden Retriever' },
-  { type: 'Dog', breed: 'Bulldog' },
-  { type: 'Dog', breed: 'Poodle' },
-  { type: 'Cat', breed: 'Persian' },
-  { type: 'Cat', breed: 'Siamese' },
-  { type: 'Cat', breed: 'Maine Coon' },
-  { type: 'Cat', breed: 'Ragdoll' },
-  { type: 'Rodent', breed: 'Hamster' },
-  { type: 'Rodent', breed: 'Guinea Pig' },
-  { type: 'Rodent', breed: 'Rat' },
-  { type: 'Bird', breed: 'Budgerigar (Budgie)' },
-  { type: 'Bird', breed: 'Cockatiel' },
-  { type: 'Bird', breed: 'Canary' },
-];
 
 const ProfileInfo = [
   {
@@ -172,20 +153,6 @@ export default function Catalog() {
         <div className={styles.topContainer}>
           <div>
             <p className={styles.titleCatalogue}>Mascotas en Adopcion</p>
-          </div>
-          <div className={styles.filter}>
-            <Autocomplete
-              multiple
-              limitTags={2}
-              id="multiple-limit-tags"
-              options={petBreeds}
-              groupBy={(option) => option.type}
-              getOptionLabel={(option) => option.breed}
-              renderInput={(params) => (
-                <TextField {...params} label="Tags (Raza, edad, tamaño)" />
-              )}
-              sx={{ width: '500px' }}
-            />
           </div>
         </div>
         <div className={styles.postContainer}>

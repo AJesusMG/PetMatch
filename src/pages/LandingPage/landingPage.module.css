@@ -1,6 +1,8 @@
-* {
-    font-family: "Poppins", sans-serif;
-  }  
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
 
 .heroStyle {
     margin-top: 65px;
@@ -10,6 +12,7 @@
 .titleMascota {
     font-size: 48px;
     text-align: center;
+    margin-top: 20px;
 }
 
 .titleAdopta {
@@ -23,11 +26,3 @@
     align-items: center;
     margin: 40px 0px 40px 0px;
   }
-
-.btnCatalogoStyle {
-    background-color: #99E550 !important;
-    font-size: 20px !important;
-    color: black !important;
-    border-radius: 5px;
-    text-transform: capitalize !important;
-}

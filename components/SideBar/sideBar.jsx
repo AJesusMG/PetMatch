@@ -111,7 +111,10 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  borderRadius: '10%',
+                  color: 'white', // Agrega color blanco al texto en hover
+                  '& svg': {
+                    color: 'white', // Agrega color blanco al icono en hover
+                  },
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',
@@ -155,7 +158,10 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  borderRadius: '10%',
+                  color: 'white', // Agrega color blanco al texto en hover
+                  '& svg': {
+                    color: 'white', // Agrega color blanco al icono en hover
+                  },
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',
@@ -199,7 +205,10 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  borderRadius: '10%',
+                  color: 'white', // Agrega color blanco al texto en hover
+                  '& svg': {
+                    color: 'white', // Agrega color blanco al icono en hover
+                  },
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',
