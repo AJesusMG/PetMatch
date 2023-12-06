@@ -14,6 +14,7 @@ import Catalog from './pages/Catalog/Catalog';
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import TermsConditions from "./pages/TermsConditions/TermsConditions";
+import FullCommentCommunity from "./pages/FullCommentCommunity/FullCommentCommunity";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/LoginAdmin" element={<LoginAdmin />} />
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/TermsConditions" element={<TermsConditions />} />
+        <Route path="/FullCommentCommunity" element={<FullCommentCommunity />} />
       </Routes>
     </Router>
   );

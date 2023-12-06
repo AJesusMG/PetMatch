@@ -6,6 +6,7 @@ import { Grid } from '@mui/material'
 import AdoptFullPostReport from '../../../components/AdoptFullPostReport/AdoptFullPostReport'
 import ReportCard from '../../../components/ReportCard/ReportCard'
 import AnswerCard from '../../../components/AnswerCard/AnswerCard'
+import FullComment from '../../../components/FullComment/FullComment'
 
 const FullPostInfo = [
   {
@@ -64,7 +65,8 @@ export const SignUp = () => {
         ))}
       </Grid> */}
       {/* <ReportCard /> */}
-      <AnswerCard />
+      {/* <AnswerCard /> */}
+      <FullComment />
     </div>
   )
 }
