@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './errorPage.module.css';
+import styles from './errorPageStyles.module.css';
 import Fox from '../../../public/img/ErrorFox.png';
 
 

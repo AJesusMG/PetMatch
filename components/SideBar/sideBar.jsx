@@ -102,7 +102,7 @@ export default function SideBar() {
           </Typography>
         </DrawerHeader>
         <List>
-          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Catalogue") }}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Catalog") }}>
             <ListItemButton className='listItemButton'
               sx={{
                 minHeight: 68,
@@ -111,7 +111,10 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  borderRadius: '10%',
+                  color: 'white', // Agrega color blanco al texto en hover
+                  '& svg': {
+                    color: 'white', // Agrega color blanco al icono en hover
+                  },
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',
@@ -146,7 +149,7 @@ export default function SideBar() {
           </ListItem>
         </List>
         <List>
-          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Comments") }}>
+          <ListItem disablePadding sx={{ display: 'block' }} onClick={() => { navigate("/Community") }}>
             <ListItemButton
               sx={{
                 minHeight: 68,
@@ -155,7 +158,10 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  borderRadius: '10%',
+                  color: 'white', // Agrega color blanco al texto en hover
+                  '& svg': {
+                    color: 'white', // Agrega color blanco al icono en hover
+                  },
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',
@@ -199,7 +205,10 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  borderRadius: '10%',
+                  color: 'white', // Agrega color blanco al texto en hover
+                  '& svg': {
+                    color: 'white', // Agrega color blanco al icono en hover
+                  },
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',

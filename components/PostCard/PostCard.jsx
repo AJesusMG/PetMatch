@@ -5,7 +5,7 @@ import styles from "./postCardStyles.module.css";
 
 const PostCard = (props) => {
   return (
-    <Card className={styles.Card} key={props.id}>
+    <Card className={styles.Card} key={props.id} onClick={props.onClick} >
       <img className={styles.Dog} src={props.img} alt="Imagen de un perro" />
       <div className={styles.overlay}>
         <h2 className={styles.userName}>{props.userName}</h2>

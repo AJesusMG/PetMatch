@@ -3,14 +3,9 @@ import { Avatar, Button, Card, Chip, Typography } from "@mui/material";
 import { Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import Dog from "../../public/img/Mopri.png";
 
-import styles from "./adoptFullPostStyles.module.css";
+import styles from "./adoptFullPostReportStyles.module.css";
 
-const AdoptFullPost = (props) => {
-
-  const handleReportButtonClick = () => {
-    props.onReportButtonClick();  // Llama a la función proporcionada por el padre
-  };
-
+const AdoptFullPostReport = (props) => {
   return (
     <Card className={styles.Card} key={props.id}>
       <div className={styles.Content}>
@@ -20,10 +15,9 @@ const AdoptFullPost = (props) => {
         <div className={styles.mainContainer}>
           <div className={styles.topSection}>
             <div className={styles.userInfo}>
-              <div><Avatar src={Dog} style={{ width: 50, height: 50, marginTop: "10px" }} /></div>
-              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}<br />{props.location}</Typography>
+              <div><Avatar src={Dog} style={{ width: 50, height: 50,  marginTop: "10px" }}  /></div>
+              <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}</Typography>
             </div>
-            <Button className={styles.reportBtn} variant="text" onClick={handleReportButtonClick}>Reportar</Button>
           </div>
           <div className={styles.infoContainer}>
             <Typography className={styles.infoText}>
@@ -54,10 +48,14 @@ const AdoptFullPost = (props) => {
               </div>
             </div>
           </div>
+          <div className={styles.btnContainer}>
+            <Button className={styles.deleteBtn} variant="contained">Eliminar</Button>
+            <Button className={styles.ignoretBtn} variant="contained">Ignorar</Button>
+          </div>
         </div>
       </div>
     </Card>
   );
 };
 
-export default AdoptFullPost;
+export default AdoptFullPostReport;

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import SideBar from "../../../components/SideBar/sideBar";
-import styles from "./userConfig.module.css";
+import styles from "./userConfigStyles.module.css";
 import Profile from "../../../public/img/AdoptMe.jpeg";
 import {Avatar} from "@mui/material";
 import VisibilityIcon from '@mui/icons-material/Visibility';

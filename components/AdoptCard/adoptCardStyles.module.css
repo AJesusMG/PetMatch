@@ -11,17 +11,10 @@
   position: relative;
   margin-top: 10px;
   margin-left: 2rem;
-  box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.4)!important; 
+  box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.4)!important; 
   margin-bottom: 1.5rem;
   cursor: pointer;
 }
-
-.Card:hover {
-  transform: scale(1.05); /* Ajusta según tus preferencias */
-  transition: transform 0.2s ease; /* Agrega una transición suave */
-}
-
-
 
 .User {
   margin-left: 20px;

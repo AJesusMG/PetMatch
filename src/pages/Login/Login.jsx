@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
-import styles from './login.module.css';
+import React, { useState, useEffect} from 'react'
+import styles from './loginStyles.module.css';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { initLogin, login } from '../../js/login.js';
+import { initSignIn, signIn } from '../../js/signIn.js'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Login() {
+  useEffect(() => {
+    initLogin();
+    initSignIn();
+  }, []);
+
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
@@ -16,47 +28,37 @@ export default function Login() {
     setMode((prevMode) => (prevMode === 'signIn' ? 'signUp' : 'signIn'));
   };
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    // Lógica para el inicio de sesión
-  };
-
-  const handleSignUp = (e) => {
-    e.preventDefault();
-    // Lógica para el registro
-  };
-
-  const handleFocus = (e) => {
-    setActiveInput(e.target);
-    e.target.classList.add(styles.active);
-  };
-
-  const handleBlur = (e) => {
-    if (e.target.value === '') {
-      e.target.classList.remove(styles.active);
+    const response = await login();
+  
+    // Verifica si se obtuvo una respuesta válida
+    if (response.code === 200) {
+      // Realiza la redirección a la página deseada (por ejemplo, '/Community')
+      navigate('/Catalogue');
+    } else {
+      // Muestra la notificación en caso de error
+      toast(response.message || 'Error desconocido', {
+        type: 'error',
+      });
     }
   };
+  
 
-  const toggleSignUpMode = () => {
-    setSignUpMode((prevMode) => !prevMode);
-  };
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    const response = await signIn();
 
-  const moveSlider = (index) => {
-    const currentImage = document.querySelector(`.${styles['img' + index]}`);
-    const images = document.querySelectorAll(`.${styles.image}`);
-    images.forEach((img) => img.classList.remove(styles.show));
-    currentImage.classList.add(styles.show);
-
-    const textSlider = document.querySelector(`.${styles.textGroup}`);
-    textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
-
-    const bullets = document.querySelectorAll(`.${styles.bullets} span`);
-    bullets.forEach((bull) => bull.classList.remove(styles.active));
-    bullets[index - 1].classList.add(styles.active);
+    // Muestra la notificación
+    toast(response.message, {
+      type: response.code === 201 ? 'success' : 'error',
+    });
   };
 
   return (
+
     <div className={styles.body}>
+       <ToastContainer />
       <main className={`${styles.main} ${mode === 'signUp' ? styles.signupMode : ''}`}>
         <div className={styles.box}>
           <div className={styles.innerBox}>
@@ -75,12 +77,11 @@ export default function Login() {
                   </a>
                 </div>
                 <div className={styles.actualForm}>
-                  <span className={styles.inputTextAbove}><b>Nombres</b></span>
+                  <span className={styles.inputTextAbove}><b>Correo Electrónico</b></span>
                   <div className={styles.inputWrap}>
-
                     <input
-                      type="text"
-                      minLength="4"
+                      type="email"
+                      id="emailLoginInput" 
                       className={styles.inputField}
                       autoComplete="off"
                       required
@@ -90,8 +91,9 @@ export default function Login() {
 
                   <div className={styles.inputWrap}>
 
-                    <input
+                  <input
                       type={showPassword ? "text" : "password"}
+                      id="passwordLoginInput" 
                       minLength="4"
                       className={styles.inputField}
                       autoComplete="off"
@@ -102,7 +104,7 @@ export default function Login() {
                     </span>
                   </div>
 
-                  <input type="submit" value="Iniciar Sesión" className={styles.signBtn} />
+                  <input type="submit" value="Iniciar Sesión" className={styles.LoginBtn} />
 
                   <p className={styles.text}>
                     Haz olvidado tu contraseña o información de usuario? {' '}<a href="#"><b>Obtener ayuda</b></a>
@@ -126,10 +128,11 @@ export default function Login() {
                 </div>
 
                 <div className={styles.actualForm}>
-                  <span className={styles.inputTextAbove}><b>Nombres</b></span>
+                  <span className={styles.inputTextAbove}><b>Nombre/s</b></span>
                   <div className={styles.inputWrap}>
                     <input
                       type="text"
+                      id="nameInput" 
                       minLength="4"
                       className={styles.inputField}
                       autoComplete="off"
@@ -137,10 +140,34 @@ export default function Login() {
                     />
                   </div>
 
-                  <span className={styles.inputTextAbove}><b>Correo</b></span>
+                  <span className={styles.inputTextAbove}><b>Apellido/s</b></span>
+                  <div className={styles.inputWrap}>
+                    <input
+                      type="text"
+                      id="lastNameInput" 
+                      minLength="4"
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
+                  </div>
+
+                  <span className={styles.inputTextAbove}><b>Teléfono</b></span>
+                  <div className={styles.inputWrap}>
+                    <input
+                      type="tel" 
+                      id="phoneInput" 
+                      className={styles.inputField}
+                      autoComplete="off"
+                      required
+                    />
+                  </div>
+
+                  <span className={styles.inputTextAbove}><b>Correo Electrónico</b></span>
                   <div className={styles.inputWrap}>
                     <input
                       type="email"
+                      id="emailSigninInput" 
                       className={styles.inputField}
                       autoComplete="off"
                       required
@@ -151,6 +178,7 @@ export default function Login() {
                   <div className={styles.inputWrap}>
                     <input
                       type={showPassword ? "text" : "password"}
+                      id="passwordSigninInput" 
                       minLength="4"
                       className={styles.inputField}
                       autoComplete="off"

@@ -1,3 +1,7 @@
+body {
+    font-family: 'Poppins';
+}
+
 .logo {
   width: 70px;
   height: 70px;
@@ -8,6 +12,7 @@
 }
 
 .nameStyle {
+  font-family: "Poppins" !important;
   font-weight: bold !important;
   font-size: 24px !important;
   color: black !important;
@@ -24,6 +29,7 @@
 }
 
 .navLink {
+  font-family: "Poppins" !important;
   color: black !important;
   text-decoration: none !important;
   cursor: pointer;
@@ -31,11 +37,13 @@
 
 .btnsContainer {
   display: flex;
-  gap: 30px;
+  gap: 40px;
   align-items: center;
 }
 
 .btnInicarStyle {
+  font-family: "Poppins", sans-serif !important;
+  width: 152px !important;
   border-color: #FEAE21 !important;
   color: black !important;
   border-radius: 5px;
@@ -43,6 +51,8 @@
 }
 
 .btnRegistrarStyle {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: bold !important;
   background-color: #99E550 !important;
   color: black !important;
   border-radius: 5px;
