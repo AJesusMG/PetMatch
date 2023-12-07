@@ -32,17 +32,27 @@ export default function Login() {
     e.preventDefault();
     const response = await login();
   
-    // Verifica si se obtuvo una respuesta válida
     if (response.code === 200) {
-      // Realiza la redirección a la página deseada (por ejemplo, '/Community')
-      navigate('/');
+      // Verifica si las cookies están presentes
+      const token = getCookie("token");
+      const userId = getCookie("user_id");
+  
+      if (token && userId) {
+        navigate('/userConfig');
+      } else {
+        // Muestra la notificación en caso de que falten cookies
+        toast('Falta información de sesión', {
+          type: 'error',
+        });
+      }
     } else {
-      // Muestra la notificación en caso de error
+      // Muestra la notificación en caso de error en el inicio de sesión
       toast(response.message || 'Error desconocido', {
         type: 'error',
       });
     }
   };
+  
   
 
   const handleSignUp = async (e) => {

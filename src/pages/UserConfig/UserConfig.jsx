@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import SideBar from "../../../components/SideBar/sideBar";
 import styles from "./userConfigStyles.module.css";
 import Profile from "../../../public/img/AdoptMe.jpeg";
@@ -6,9 +6,11 @@ import {Avatar} from "@mui/material";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
-
-
 export default function Catalogue() {
+
+  useEffect(() => {
+  }, []);
+    
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -31,19 +33,19 @@ export default function Catalogue() {
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Nombre /s</span>
             <label htmlFor="name"></label>
-            <input type="text" id="name" name="name" className={styles.customInput} />
+            <input type="text" id="newName" name="name" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Apellido /s</span>
             <label htmlFor="lastName"></label>
-            <input type="text" id="lastName" name="lastName" className={styles.customInput} />
+            <input type="text" id="newLastName" name="lastName" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Correo Electrónico</span>
             <label htmlFor="email"></label>
-            <input type="text" id="email" name="email" className={styles.customInput} />
+            <input type="text" id="newEmail" name="email" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
@@ -52,7 +54,7 @@ export default function Catalogue() {
             <div className={styles.passwordContainer}>
               <input
                 type={showPassword ? "text" : "password"}
-                id="password"
+                id="newPassword"
                 name="password" 
                 className={styles.password}/>
               <span className={styles.Eye} onClick={togglePasswordVisibility}>
@@ -67,19 +69,19 @@ export default function Catalogue() {
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Teléfono</span>
             <label htmlFor="phone"></label>
-            <input type="text" id="phone" name="phone" className={styles.phone} />
+            <input type="text" id="newPhone" name="phone" className={styles.phone} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Instagram</span>
             <label htmlFor="instagram"></label>
-            <input type="text" id="instagram" name="instagram" className={styles.customInput} />
+            <input type="text" id="newInstagram" name="instagram" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Facebook</span>
             <label htmlFor="facebook"></label>
-            <input type="text" id="facebook" name="facebook" className={styles.customInput} />
+            <input type="text" id="newFacebook" name="facebook" className={styles.customInput} />
           </div>
         </form>
       </div>
