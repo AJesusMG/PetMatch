@@ -1,0 +1,56 @@
+/* Estilos para el contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+
+  .leftColumn {
+    margin-top: 8rem;
+    flex: 1; 
+  }
+
+
+
+  .rightColumn {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+  }
+
+  .text{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .Button {
+    width: 20%;
+    height: 2.5rem;
+    background-color: #99E550;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Estilos del zorro */
+  img {
+    max-width: 100%;
+  }
+  
+  /* Estilos del errorDiv */
+  h1 {
+    font-size: 4rem;
+    
+  }
+  

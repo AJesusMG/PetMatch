@@ -1,0 +1,37 @@
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  /* gap: 50px; */
+  
+}
+
+.Card {
+  width: 450px;
+  height: 660px;
+  position: relative;
+  margin-top: 10px;
+  margin-left: 2rem;
+  box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.4)!important; 
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.User {
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.Animal{
+  height: 25rem;
+  width: 30rem;
+  object-fit: cover;
+}
+
+.descripcion {
+  margin: 10px 10px 0px 10px;
+  text-align: center;
+  font-size: 20px;
+}
