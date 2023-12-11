@@ -1,10 +1,56 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SideBar from "../../../components/SideBar/sideBar";
 import styles from "./questionnaireStyles.module.css";
 import Profile from "../../../public/img/Questionnaire.jpg";
-import {Avatar} from "@mui/material";
+import { Avatar } from "@mui/material";
+
+function initPreferences() {
+  const SendPreferences = document.getElementById('BotonEnviar');
+  if (SendPreferences) {
+    SendPreferences.addEventListener('click', Send);
+  }
+  
+  async function Send() {
+    var HouseSize = document.getElementById('houseSize').value;
+    var Outside = document.getElementById('TimeOutside').value;
+    var Actividad = document.getElementById('ActividadFisica').value;
+    var Preferencia = document.getElementById('PreferenciaMascota').value;
+    var Clima = document.getElementById('TipoClima').value;
+    var Alergias = document.getElementById('Alergias').value;
+
+    console.log(HouseSize, Outside, Actividad, Preferencia, Clima, Alergias);
+    try {
+      const response = await fetch("http://localhost:3000/preferences",{
+        method: 'POST',
+        headers:{
+          "Content-Type": 'application/json', 
+        },
+        body: JSON.stringify({
+          User_id: 3, //aca se agrega lo del  user id pa 
+          Housing_Type: HouseSize,
+          Allergies: Alergias,
+          Exercise_ability: Actividad,
+          Category: Preferencia,
+          Outdoor_Time: Outside,
+          Weather: Clima
+        })
+      });
+      const data = await response.json();
+      console.log(data)
+
+      if (data.code ===200){
+        console.log('Todo jala')
+      }
+    } catch (err){
+      console.log('Llamen a dios', err);
+    }
+  }
+}
 
 export default function Questionnaire() {
+  useEffect(() => {
+    initPreferences();
+  }, []);
   return (
     <div className={styles.containerFlex}>
       <div className={styles.sideBar}>
@@ -86,7 +132,7 @@ export default function Questionnaire() {
             />
         </div>
         <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.saveButton}>
+          <button id="BotonEnviar"type="submit" className={styles.saveButton}>
             <b>Enviar Cuestionario</b>
           </button>
         </div>

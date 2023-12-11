@@ -8,7 +8,6 @@ import MyAccount from "./pages/MyAccount/MyAccount";
 import Community from "./pages/Community/Community";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import UserConfig from './pages/userConfig/userConfig';
-import Cuestionario from "./pages/Cuestionario/Cuestionario";
 import AdminReports from './pages/AdminReports/AdminReports';
 import Questionnaire from './pages/Questionnaire/Questionnaire';
 import Catalog from './pages/Catalog/Catalog';
@@ -28,7 +27,6 @@ function App() {
         <Route path="/MyAccount" element={<MyAccount />} />
         <Route path="/ErrorPage" element={<ErrorPage />} />
         <Route path="/UserConfig" element={<UserConfig />} />
-        <Route path="/Cuestionario" element={<Cuestionario/>}/>
         <Route path="/AdminReports" element={<AdminReports />} />
         <Route path="/Questionnaire" element={<Questionnaire />} />
         <Route path="/Catalog" element={<Catalog />} />
@@ -39,5 +37,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App
