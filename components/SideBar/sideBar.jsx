@@ -15,6 +15,8 @@ import ListItemText from '@mui/material/ListItemText';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import PeopleOutlineIcon from '@mui/icons-material/PeopleOutline';
 import { useNavigate } from 'react-router-dom';
+import ChoseTypePet from '../ChoseTypePet/choseTypePet';
+import { Modal } from '@mui/material';
 
 const drawerWidth = 200;
 
@@ -65,6 +67,18 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 export default function SideBar() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -73,8 +87,15 @@ export default function SideBar() {
   const handleDrawerToggle = () => {
     setOpen(!open);
   };
+
+  const [addPetModalOpen, setAddPetModalOpen] = React.useState(false);
+
+  const handleOpenAddPetModal = () => {
+    setAddPetModalOpen(true);
+  };
+
   return (
-    <Box sx={{ display: 'flex'}}>
+    <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
@@ -198,6 +219,7 @@ export default function SideBar() {
         <List>
           <ListItem disablePadding sx={{ display: 'block' }}>
             <ListItemButton
+             onClick={handleOpenAddPetModal}
               sx={{
                 minHeight: 68,
                 Width: '18px',
@@ -205,29 +227,13 @@ export default function SideBar() {
                 transition: 'transform 0.2s',
                 '&:hover': {
                   background: 'rgba(254, 174, 33, 1)',
-                  color: 'white', // Agrega color blanco al texto en hover
-                  '& svg': {
-                    color: 'white', // Agrega color blanco al icono en hover
-                  },
+                  color: 'white',
                 },
                 px: 2.5,
                 cursor: open ? 'pointer' : 'default',
               }}
             >
-              <ListItemIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center',
-                  transition: 'transform 0.2s',
-                  '&:hover': {
-                    transform: 'scale(1.4)',
-                    color: 'white',
-                  },
-                }}
-              >
-                <AddIcon />
-              </ListItemIcon>
+              <ChoseTypePet open={addPetModalOpen} handleClose={() => setAddPetModalOpen(false)} />
               <ListItemText
                 primary={<span style={{ fontWeight: 'bold' }}>Añadir</span>}
                 sx={{

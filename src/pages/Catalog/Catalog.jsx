@@ -10,6 +10,7 @@ import ReportCard from "../../../components/ReportCard/ReportCard";
 
 import styles from "./catalogStyles.module.css";
 
+
 const PostInfo = [
   {
     id: 1,

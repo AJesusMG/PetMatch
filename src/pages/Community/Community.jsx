@@ -10,12 +10,6 @@ import Profile from "../../../public/img/dog_1.png";
 
 import styles from "./communityStyles.module.css";
 
-const handleProfileClick = () => {
-  // Agrega aquí la lógica de redirección o acciones específicas del perfil
-  console.log("Perfil clickeado");
-  // Puedes agregar aquí la lógica de redirección o acciones específicas del perfil
-};
-
 const CommentInfo = [
   {
     id: 1,
