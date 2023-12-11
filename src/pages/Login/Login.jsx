@@ -38,7 +38,7 @@ export default function Login() {
       const userId = getCookie("user_id");
   
       if (token && userId) {
-        navigate('/userConfig');
+        navigate('/Catalogue');
       } else {
         // Muestra la notificación en caso de que falten cookies
         toast('Falta información de sesión', {

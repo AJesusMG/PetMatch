@@ -44,7 +44,6 @@ export default function ChoseTypePet({ open, handleClose }) {
     pet_Size: '',
     age: '',
     description: '',
-    owner: 1,
     allergies: '',
     exercise_ability: '',
     status: 'en adopcion'
@@ -227,8 +226,6 @@ export default function ChoseTypePet({ open, handleClose }) {
         aria-describedby="third-modal-description"
       >
         <Box className={styles.modalContainer}>
-          {/* Contenido del tercer modal */}
-          {/* ... */}
           <UploadImage />
         </Box>
       </Modal>
