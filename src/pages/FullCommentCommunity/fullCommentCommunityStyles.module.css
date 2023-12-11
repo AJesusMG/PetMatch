@@ -65,7 +65,7 @@ body {
     width: 820px;
     height: 225px;
     margin-left: 50px;
-    margin-top: 20%;
+    margin-top: 20px;
 }
 
 .title {
@@ -101,7 +101,6 @@ body {
 }
 
 .inputContainer {
-    margin-top: 20px;
     margin-left: 15px;
     width: 90%;
 }
@@ -136,6 +135,11 @@ body {
     font-size: 16px !important;
 }
 
+.fullCommentContainer {
+    margin-top: 20%;
+    margin-left: 50px;
+}
+
 .commentContainer {
     margin-top: 15px;
     margin-left: 30px;
@@ -160,5 +164,10 @@ body {
     margin-left: 74%;
     border-radius: 5px; /* Bordes redondeados */
     box-shadow: 10px 0px 20px rgba(0, 0, 0, 0.2); /* Sombra solo en el lado derecho */
+  }
+
+  .answerTitleContainer {
+    margin-top: 20px;
+    margin-left: 50px;
   }
   

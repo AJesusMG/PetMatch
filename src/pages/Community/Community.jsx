@@ -20,13 +20,13 @@ const CommentInfo = [
   {
     id: 1,
     userName: "@a.jesus.g",
-    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
+    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
     numComments: 15,
   },
   {
     id: 2,
     userName: "@Nutriayapa",
-    comment: "¿Puedes brindarme un consejo sobre cómo cuidar y criar a un perro de la mejor manera posible?",
+    comment: "¿Porque Bryan es tan hot?",
     numComments: 15,
   },
   {

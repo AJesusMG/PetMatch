@@ -45,6 +45,8 @@ export default function Login() {
           type: 'error',
         });
       }
+      // Realiza la redirección a la página deseada (por ejemplo, '/Community')
+      navigate('/Catalogue');
     } else {
       // Muestra la notificación en caso de error en el inicio de sesión
       toast(response.message || 'Error desconocido', {

@@ -13,6 +13,10 @@ import Questionnaire from './pages/Questionnaire/Questionnaire';
 import Catalog from './pages/Catalog/Catalog';
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
 import { initUserConfig } from './js/userConfig.js';
+import AboutUs from "./pages/AboutUs/AboutUs";
+import TermsConditions from "./pages/TermsConditions/TermsConditions";
+import FullCommentCommunity from "./pages/FullCommentCommunity/FullCommentCommunity";
+
 
 function App() {
   useEffect(() => {
@@ -35,6 +39,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/TermsConditions" element={<TermsConditions />} />
+        <Route path="/FullCommentCommunity" element={<FullCommentCommunity />} />
       </Routes>
     </Router>
   );
