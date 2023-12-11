@@ -1,25 +1,31 @@
 async function initUserConfig(checkCookies = true) {
+  let token, userId;
+
   if (checkCookies) {
     // Verifica si las cookies ya están disponibles
-    const token = await getCookieAsync("token");
-    const userId = await getCookieAsync("user_id");
+    token = await getCookieAsync("token");
+    userId = await getCookieAsync("user_id");
 
     console.log('Token = ', token);
     console.log('ID = ', userId);
+
+    const submitBtnElement = document.getElementById('saveButton'); // Asigna un id al botón
+    if (submitBtnElement) {
+      submitBtnElement.addEventListener('click', () => updateUserData(userId, token));
+    }
 
     // Verifica si alguna de las cookies falta
     if (!token || !userId) {
       console.log('Redirigiendo al inicio de sesión...');
       return false;
     }
-
-    // Llama a la función updateUserData con userId y token
-    await updateUserData(userId, token);
-
+    
     return true;
   }
   return false;
 }
+
+
 
 async function updateUserData(userId, token) {
   var newNames = document.getElementById('newName').value;
@@ -30,6 +36,8 @@ async function updateUserData(userId, token) {
   var new_Facebook = document.getElementById('newFacebook').value;
   var new_Instagram = document.getElementById('newInstagram').value;
 
+  console.log('Token enviado:', token);
+  console.log('User_ID enviado:', userId);
   console.log(newNames, newLastNames, newMail, newPass, newPhone, new_Facebook, new_Instagram);
 
   try {
@@ -79,4 +87,4 @@ function getCookieAsync(name) {
   });
 }
 
-export {initUserConfig};
+export {initUserConfig, updateUserData, getCookieAsync};

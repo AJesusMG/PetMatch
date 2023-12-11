@@ -5,11 +5,27 @@ import Profile from "../../../public/img/AdoptMe.jpeg";
 import {Avatar} from "@mui/material";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import {initUserConfig, updateUserData , getCookieAsync} from '../../js/userConfig.js'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 export default function Catalogue() {
 
   useEffect(() => {
+    initUserConfig();
+
   }, []);
+
+  const handleSaveButtonClick = async () => {
+    const token = await getCookieAsync("token");
+    const userId = await getCookieAsync("user_id");
+  
+    if (token && userId) {
+      updateUserData(userId, token);
+    } else {
+      console.log('Redirigiendo al inicio de sesión...');
+    }
+  };
     
   const [showPassword, setShowPassword] = useState(false);
 
@@ -20,6 +36,16 @@ export default function Catalogue() {
   const handlePhotoChange = () => {
     // Acción que deseas realizar al cambiar la foto
     console.log("Cambiando la foto...");
+  };
+
+  const handleUserConfig = async (e) => {
+    e.preventDefault();
+    const response = await updateUserData();
+
+    // Muestra la notificación
+    toast(response.message, {
+      type: response.code === 201 ? 'success' : 'error',
+    });
   };
 
   return (
@@ -100,7 +126,7 @@ export default function Catalogue() {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.saveButton}>
+          <button type="submit" className={styles.saveButton} onClick={handleSaveButtonClick}>
             <b>Guardar Cambios</b>
           </button>
         </div>
