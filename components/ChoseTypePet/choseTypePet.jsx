@@ -32,7 +32,7 @@ const data = [
   },
 ];
 
-export default function ChoseTypePet() {
+export default function ChoseTypePet({ open, handleClose }) {
   const [openFirstModal, setOpenFirstModal] = useState(false);
   const [openSecondModal, setOpenSecondModal] = useState(false);
   const [selectedPetType, setSelectedPetType] = useState('');

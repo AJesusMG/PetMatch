@@ -19,10 +19,10 @@ export default function TermsConditions() {
                     </div>
                     <div className={styles.firstParagrahpContainer}>
                         <p className={styles.textStyle}>El Usuario no podrá utilizar el Sitio Web en caso de que el Usuario carezca o tenga limitada su capacidad de ejercicio para aceptar los presentes Términos y Condiciones por cualquier causa.
-                            <br />Al visitar y/o usar el Sitio Web, el Usuario expresamente manifiesta estar conforme y obligarse a la totalidad de los presentes Términos y Condiciones, los demás documentos incorporados a los mismos por referencia, así como a las leyes y reglamentos aplicables de conformidad a la legislación vigente para el uso del Sitio Web.<br />
-                            Estos términos y condiciones son obligatorios y vinculantes para los contratantes, por lo que cualquier persona que no los acepte deberá abstenerse de utilizar y/o visitar el sitio web y/o cualquier otro servicio que ofrezca PetMatch.<br />
-                            PetMatch no guardará una copia individualizada del presente convenio celebrado entre el Usuario y PetMatch, por lo que se le recomienda al Usuario que guarde una copia de los presentes Términos y Condiciones para su propio expediente.<br />
-                            En caso de que el Usuario viole lo expresado en estos términos y condiciones, PetMatch, podrá cancelar su uso, así como excluir al Usuario de futuras operaciones, y/o tomar la acción legal que juzgue conveniente para sus intereses.</p>
+                        <br />Al visitar y/o usar el Sitio Web, el Usuario expresamente manifiesta estar conforme y obligarse a la totalidad de los presentes Términos y Condiciones, los demás documentos incorporados a los mismos por referencia, así como a las leyes y reglamentos aplicables de conformidad a la legislación vigente para el uso del Sitio Web.<br />
+                        Estos términos y condiciones son obligatorios y vinculantes para los contratantes, por lo que cualquier persona que no los acepte deberá abstenerse de utilizar y/o visitar el sitio web y/o cualquier otro servicio que ofrezca PetMatch.<br />
+                        PetMatch no guardará una copia individualizada del presente convenio celebrado entre el Usuario y PetMatch, por lo que se le recomienda al Usuario que guarde una copia de los presentes Términos y Condiciones para su propio expediente.<br />
+                        En caso de que el Usuario viole lo expresado en estos términos y condiciones, PetMatch, podrá cancelar su uso, así como excluir al Usuario de futuras operaciones, y/o tomar la acción legal que juzgue conveniente para sus intereses. Usamos cookies.</p>
                     </div>
                 </Card>
                 <Card className={styles.card}>
