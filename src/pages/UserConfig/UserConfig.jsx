@@ -1,14 +1,32 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import SideBar from "../../../components/SideBar/sideBar";
 import styles from "./userConfigStyles.module.css";
 import Profile from "../../../public/img/AdoptMe.jpeg";
 import {Avatar} from "@mui/material";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-
+import {initUserConfig, updateUserData , getCookieAsync} from '../../js/userConfig.js'
+import { ToastContainer, toast } from 'react-toastify';
 
 
 export default function Catalogue() {
+
+  useEffect(() => {
+    initUserConfig();
+
+  }, []);
+
+  const handleSaveButtonClick = async () => {
+    const token = await getCookieAsync("token");
+    const userId = await getCookieAsync("user_id");
+  
+    if (token && userId) {
+      updateUserData(userId, token);
+    } else {
+      console.log('Redirigiendo al inicio de sesión...');
+    }
+  };
+    
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -18,6 +36,16 @@ export default function Catalogue() {
   const handlePhotoChange = () => {
     // Acción que deseas realizar al cambiar la foto
     console.log("Cambiando la foto...");
+  };
+
+  const handleUserConfig = async (e) => {
+    e.preventDefault();
+    const response = await updateUserData();
+
+    // Muestra la notificación
+    toast(response.message, {
+      type: response.code === 201 ? 'success' : 'error',
+    });
   };
 
   return (
@@ -31,19 +59,19 @@ export default function Catalogue() {
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Nombre /s</span>
             <label htmlFor="name"></label>
-            <input type="text" id="name" name="name" className={styles.customInput} />
+            <input type="text" id="newName" name="name" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Apellido /s</span>
             <label htmlFor="lastName"></label>
-            <input type="text" id="lastName" name="lastName" className={styles.customInput} />
+            <input type="text" id="newLastName" name="lastName" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Correo Electrónico</span>
             <label htmlFor="email"></label>
-            <input type="text" id="email" name="email" className={styles.customInput} />
+            <input type="text" id="newEmail" name="email" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
@@ -52,7 +80,7 @@ export default function Catalogue() {
             <div className={styles.passwordContainer}>
               <input
                 type={showPassword ? "text" : "password"}
-                id="password"
+                id="newPassword"
                 name="password" 
                 className={styles.password}/>
               <span className={styles.Eye} onClick={togglePasswordVisibility}>
@@ -67,19 +95,19 @@ export default function Catalogue() {
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Teléfono</span>
             <label htmlFor="phone"></label>
-            <input type="text" id="phone" name="phone" className={styles.phone} />
+            <input type="text" id="newPhone" name="phone" className={styles.phone} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Instagram</span>
             <label htmlFor="instagram"></label>
-            <input type="text" id="instagram" name="instagram" className={styles.customInput} />
+            <input type="text" id="newInstagram" name="instagram" className={styles.customInput} />
           </div>
 
           <div className={styles.formGroup}>
             <span className={styles.inputTextAbove}>Facebook</span>
             <label htmlFor="facebook"></label>
-            <input type="text" id="facebook" name="facebook" className={styles.customInput} />
+            <input type="text" id="newFacebook" name="facebook" className={styles.customInput} />
           </div>
         </form>
       </div>
@@ -98,7 +126,7 @@ export default function Catalogue() {
         </div>
 
         <div className={styles.buttonContainer}>
-          <button type="submit" className={styles.saveButton}>
+          <button type="submit" className={styles.saveButton} onClick={handleSaveButtonClick}>
             <b>Guardar Cambios</b>
           </button>
         </div>
