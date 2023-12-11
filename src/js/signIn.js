@@ -22,7 +22,7 @@ async function signIn() {
     var Phone = document.getElementById('phoneInput').value;
 
 
-    console.log(firstName, lastName, mail, pass, Phone, Rol);
+    console.log(firstName, lastName, mail, pass, Phone);
 
     try {
         const response = await fetch("http://localhost:3000/user/signIn", {
@@ -31,23 +31,23 @@ async function signIn() {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                First_names: firstName,
-                Last_names: lastName,
-                Email: mail,
-                Password: pass,
-                Phone_Number:Phone,
+                first_names: firstName,
+                last_names: lastName,
+                email: mail,
+                password: pass,
+                phone_Number: Phone,
             }),
         });
-
+    
         const data = await response.json();
+        var Rol = data.rol;  // Utiliza "rol" en lugar de "Rol_Id"
         console.log(data);
-        var Rol = data.Rol_Id;
         console.log(Rol);
         return data;
 
     } catch (error) {
         console.error(error);
     }
-}
+}    
 
 export {initSignIn, signIn};
