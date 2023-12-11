@@ -38,7 +38,7 @@ async function login() {
       setCookie("token", data.token, 1); // Cambia el valor 1 a la duración deseada en días
       setCookie("user_id", data.user_id, 1); // Cambia el valor 1 a la duración deseada en días
       document.dispatchEvent(new Event('cookiesReady'));
-      window.location.href = "/userConfig";
+      window.location.href = "/Catalogue";
       return data;
     } else {
       alert("Usuario y/o contraseña incorrectos");
