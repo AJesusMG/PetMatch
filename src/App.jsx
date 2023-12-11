@@ -12,6 +12,8 @@ import AdminReports from './pages/AdminReports/AdminReports';
 import Questionnaire from './pages/Questionnaire/Questionnaire';
 import Catalog from './pages/Catalog/Catalog';
 import LoginAdmin from "./pages/LoginAdmin/LoginAdmin";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import TermsConditions from "./pages/TermsConditions/TermsConditions";
 
 function App() {
   return (
@@ -29,9 +31,12 @@ function App() {
         <Route path="/Questionnaire" element={<Questionnaire />} />
         <Route path="/Catalog" element={<Catalog />} />
         <Route path="/LoginAdmin" element={<LoginAdmin />} />
+        <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/TermsConditions" element={<TermsConditions />} />
       </Routes>
     </Router>
   );
 }
+
 
 export default App

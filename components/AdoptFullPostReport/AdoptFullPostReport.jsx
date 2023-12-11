@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Card, Chip, Typography } from "@mui/material";
-import { AccountCircle, Facebook, Instagram, WhatsApp } from "@mui/icons-material";
+import { Avatar, Button, Card, Chip, Typography } from "@mui/material";
+import { Facebook, Instagram, WhatsApp } from "@mui/icons-material";
 import Dog from "../../public/img/Mopri.png";
 
 import styles from "./adoptFullPostReportStyles.module.css";
@@ -15,10 +15,9 @@ const AdoptFullPostReport = (props) => {
         <div className={styles.mainContainer}>
           <div className={styles.topSection}>
             <div className={styles.userInfo}>
-              <div><AccountCircle style={{ fontSize: 50 }} /></div>
+              <div><Avatar src={Dog} style={{ width: 50, height: 50,  marginTop: "10px" }}  /></div>
               <Typography style={{ marginLeft: "10px", fontWeight: "bold", fontSize: 16 }}>{props.userName}</Typography>
             </div>
-            <Button className={styles.reportBtn} variant="text">Reportar</Button>
           </div>
           <div className={styles.infoContainer}>
             <Typography className={styles.infoText}>

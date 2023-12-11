@@ -29,13 +29,6 @@ body {
   align-items: center;
 }
 
-.reportBtn {
-  font-family: "Poppins", sans-serif !important;
-  color: black !important;
-  text-transform: capitalize !important;
-  font-size: 16px !important;
-}
-
 .infoContainer {
   width: 420px;
   margin: 30px auto;
@@ -76,6 +69,7 @@ body {
 .Dog {
   width: 590px;
   height: 639px;
+  object-fit: cover;
 }
 
 .btnContainer {
