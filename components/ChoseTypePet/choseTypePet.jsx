@@ -4,7 +4,7 @@ import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
 import styles from './choseTypePetStyles.module.css';
 import AddIcon from '@mui/icons-material/Add';
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close';  
 import { TextField, MenuItem } from '@mui/material';
 import UploadImage from '../UploadImage/uploadImage';
 
@@ -12,25 +12,50 @@ import UploadImage from '../UploadImage/uploadImage';
 const data = [
   {
     id: 1,
-    petType: "Perro",
+    petType: "Perros",
     img: "../../public/img/Perro_F.jpg",
   },
   {
     id: 2,
-    petType: "Gato",
+    petType: "Gatos",
     img: "../../public/img/Cats.jpg",
   },
   {
     id: 3,
-    petType: "Roedor",
+    petType: "Roedores",
     img: "../../public/img/Hamsters.jpg",
   },
   {
     id: 4,
-    petType: "Ave",
+    petType: "Aves",
     img: "../../public/img/Birds.jpg",
   },
 ];
+
+function extractTokenFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'token') {
+      return value;
+    }
+  }
+  return null;
+}
+
+function extractUserIdFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'user_id') {
+      return value; // Assuming the user ID is stored with the name 'userid'
+    }
+  }
+  return null;
+}
+
+const cookies = document.cookie;
+const userId = extractUserIdFromCookies(cookies);
 
 export default function ChoseTypePet({ open, handleClose }) {
   const [openFirstModal, setOpenFirstModal] = useState(false);
@@ -39,6 +64,7 @@ export default function ChoseTypePet({ open, handleClose }) {
   const [openThirdModal, setOpenThirdModal] = useState(false);
 
   const [petData, setPetData] = useState({
+    owner: userId,
     name: '',
     breed: '',
     pet_Size: '',
@@ -46,7 +72,9 @@ export default function ChoseTypePet({ open, handleClose }) {
     description: '',
     allergies: '',
     exercise_ability: '',
-    status: 'en adopcion'
+    weather: '',
+    outdoor_Time: ''
+
   });
 
   const handleOpenFirstModal = () => {
@@ -68,14 +96,16 @@ export default function ChoseTypePet({ open, handleClose }) {
     setOpenFirstModal(true);
     setSelectedPetType('');
     setPetData({
+      owner: userId,
       name: '',
       breed: '',
-      age: '',
       pet_Size: '',
-      description: '', // Agregar limpieza para el campo 'description'
-      // Si este campo no debería reiniciarse, déjalo fuera
+      age: '',
+      description: '',
       allergies: '',
-      exercise_ability: '', // Limpiar otros campos no relacionados con la creación de mascotas
+      exercise_ability: '',
+      weather: '',
+      outdoor_Time: ''// Limpiar otros campos no relacionados con la creación de mascotas
       // Si este campo no debería reiniciarse, déjalo fuera
     });
   };
@@ -92,12 +122,17 @@ export default function ChoseTypePet({ open, handleClose }) {
       type: selectedPetType,
     };
     console.log('Datos de la mascota:', completePetData);
+
+
+    const token = extractTokenFromCookies(cookies);
     // Realizar acciones adicionales o enviar a tu backend aquí
 
     fetch('http://localhost:3000/pets', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token,
+        'credentials': 'include'
       },
       body: JSON.stringify(completePetData)
     })
@@ -175,17 +210,27 @@ export default function ChoseTypePet({ open, handleClose }) {
                   label="Age"
                   value={petData.age}
                   onChange={handleFormSubmit}
+                  type="text" // Tipo de entrada de texto para que pueda aceptar números
+                  inputProps={{
+                    pattern: '[0-9]*', // Patrón para aceptar solo números
+                    inputMode: 'numeric', // Modo de entrada numérica en dispositivos móviles
+                  }}
                   style={{ flex: '1' }}
                 />
               </div>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <TextField
+                  select
                   name="pet_Size"
                   label="Size"
                   value={petData.pet_Size}
                   onChange={handleFormSubmit}
                   style={{ flex: '1' }}
-                />
+                >
+                  <MenuItem value="Pequeno">Pequeño</MenuItem>
+                  <MenuItem value="Mediano">Mediano</MenuItem>
+                  <MenuItem value="Grande">Grande</MenuItem>
+                </TextField>
                 <TextField
                   name="breed"
                   label="Breed"
@@ -194,25 +239,64 @@ export default function ChoseTypePet({ open, handleClose }) {
                   style={{ flex: '1' }}
                 />
               </div>
-              <TextField name="allergies" label="Allergies" value={petData.allergies} onChange={handleFormSubmit} /> {/* Agregado */}
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <TextField
+                  select
+                  name="allergies"
+                  label="Allergies"
+                  value={petData.allergies}
+                  onChange={handleFormSubmit}
+                  style={{ flex: '1' }}
+                >
+                  <MenuItem value="Yes">Si</MenuItem>
+                  <MenuItem value="No">No</MenuItem>
+                </TextField> {/* Agregado */}
               <TextField
                 select
                 name="exercise_ability"
                 label="Exercise Ability"
                 value={petData.exercise_ability}
                 onChange={handleFormSubmit}
+                  style={{ flex: '1' }}
               >
                 <MenuItem value="Poco">Poco</MenuItem>
                 <MenuItem value="Moderado">Moderado</MenuItem>
                 <MenuItem value="Mucho">Mucho</MenuItem>
               </TextField>
+              </div>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <TextField
+                  select
+                  name="outdoor_Time"
+                  label="¿Pasas mucho tiempo afuera?"
+                  value={petData.outdoor_Time}
+                  onChange={handleFormSubmit}
+                  style={{ flex: '1' }}
+                >
+                  <MenuItem value="Si">Si</MenuItem>
+                  <MenuItem value="No">No</MenuItem>
+                </TextField> {/* Agregado */}
+                <TextField
+                  select
+                  name="weather"
+                  label="Clima preferente"
+                  value={petData.weather}
+                  onChange={handleFormSubmit}
+                  style={{ flex: '1' }}
+                >
+                  <MenuItem value="Frio">Frio</MenuItem>
+                  <MenuItem value="Calor">Calor</MenuItem>
+                  <MenuItem value="Templado">Templado</MenuItem>
+                  <MenuItem value="Todos los climas">Todos los climas</MenuItem>
+                </TextField>
+              </div>
               <TextField
                 name="description"
                 label="Description"
                 value={petData.description}
                 onChange={handleFormSubmit}
                 multiline
-                rows={4}
+                rows={9}
               />
             </div>
 

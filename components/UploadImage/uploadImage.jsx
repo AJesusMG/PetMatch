@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Button from '@mui/material/Button';
 import styles from './uploadImageStyles.module.css';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import CloseIcon from '@mui/icons-material/Close';
-import { styled } from '@mui/material/styles';
 
-const VisuallyHiddenInput = styled('input')({
-  clip: 'rect(0 0 0 0)',
-  clipPath: 'inset(50%)',
-  height: 1,
-  overflow: 'hidden',
-  position: 'absolute',
-  bottom: 0,
-  left: 0,
-  whiteSpace: 'nowrap',
-  width: 1,
-});
+function extractTokenFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'token') {
+      return value;
+    }
+  }
+  return null;
+}
 
 export default function UploadImage() {
   const [selectedFile, setSelectedFile] = useState(null);
+  const fileInputRef = useRef(null); // Referencia para el input
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -29,9 +28,17 @@ export default function UploadImage() {
     if (selectedFile) {
       const formData = new FormData();
       formData.append('image', selectedFile);
-;
+      console.log(formData);
+
+
+
+      const cookies = document.cookie;
+      const token = extractTokenFromCookies(cookies);
 
       fetch('http://localhost:3000/uploads', {
+        headers: {
+          'Authorization': 'Bearer ' + token,
+        },
         method: 'POST',
         body: formData,
       })
@@ -46,6 +53,10 @@ export default function UploadImage() {
 
           // Segunda petición POST a localhost:3000/posts
           return fetch('http://localhost:3000/posts', {
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + token,
+            },
             method: 'POST',
           });
         })
@@ -64,6 +75,12 @@ export default function UploadImage() {
     }
   };
 
+  const handleButtonClick = () => {
+    // Simula el clic en el input de tipo file
+    fileInputRef.current.click();
+  };
+
+
   return (
     <React.Fragment>
       <div className={styles.modalContainer}>
@@ -80,10 +97,20 @@ export default function UploadImage() {
           <div>
             <CloudQueueIcon />
           </div>
-          <Button component="label" variant="contained" color="success">
+          <Button
+            variant="contained"
+            color="success"
+            onClick={handleButtonClick} // Manejar el clic del botón
+          >
             Seleccionar desde la computadora
-            <input type="file" onChange={handleFileChange} style={{ display: 'none' }} name='image'/>
           </Button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+            name="image"
+          />
         </div>
       </div>
     </React.Fragment>

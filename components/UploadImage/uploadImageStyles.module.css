@@ -1,41 +1,37 @@
 /* ModalStyles.css */
 .modalContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 590px;
-    height: 600px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 24px;
-    padding: 4px;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 590px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 24px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .headModalUploadImage{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    width: 100%;
-    margin: 0;
-    border-bottom: 2px solid #000;
-  }
-  .headModalUploadImage button{
-    margin-left: -210px;
-  }
-  .headModalUploadImage h2{
-    height: 30px;
-    margin: 4px;
-    margin-left: 160px;
-  }
+.headModalUploadImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 8px;
+  border-bottom: 2px solid #000;
+}
 
-  .ContentModalUploadGrid {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.headModalUploadImage h2 {
+  margin: 0;
+}
 
-  }
-  
+.ContentModalUploadGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

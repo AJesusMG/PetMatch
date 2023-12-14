@@ -4,75 +4,88 @@ import styles from "./questionnaireStyles.module.css";
 import Profile from "../../../public/img/Questionnaire.jpg";
 import { Avatar } from "@mui/material";
 
-function initPreferences() {
-  const SendPreferences = document.getElementById('BotonEnviar');
-
-  if (SendPreferences) {
-    SendPreferences.addEventListener('click', Send);
-  }
-
-  async function Send() {
-    // Obtener cookies del navegador
-    const cookies = document.cookie;
-
-    // Extraer el token JWT de las cookies
-    const token = extractTokenFromCookies(cookies);
-
-    const HouseSize = document.getElementById('houseSize').value;
-    const Outside = document.getElementById('TimeOutside').value;
-    const Actividad = document.getElementById('ActividadFisica').value;
-    const Preferencia = document.getElementById('PreferenciaMascota').value;
-    const Clima = document.getElementById('TipoClima').value;
-    const Alergias = document.getElementById('Alergias').value;
-
-    console.log(token)
-
-    console.log(HouseSize, Outside, Actividad, Preferencia, Clima, Alergias);
-    try {
-      const response = await fetch("http://localhost:3000/preferences/createPreferences", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + token,
-        },
-        body: JSON.stringify({
-          User_id: 3,
-          Housing_Type: HouseSize,
-          Allergies: Alergias,
-          Exercise_ability: Actividad,
-          Category: Preferencia,
-          Outdoor_Time: Outside,
-          Weather: Clima
-        })
-      });
-      const data = await response.json();
-      console.log(data);
-
-      if (data.code === 200) {
-        console.log('Todo jala');
-      }
-    } catch (err) {
-      console.log('Llamen a dios', err);
+function extractTokenFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'token') {
+      return value;
     }
   }
+  return null;
+}
 
-  // Función para extraer el token de las cookies
-  function extractTokenFromCookies(cookieString) {
-    const cookies = cookieString.split(';');
-    for (const cookie of cookies) {
-      const [name, value] = cookie.trim().split('=');
-      if (name === 'token') { // Reemplaza 'your_token_cookie_name' con el nombre de tu cookie que almacena el token
-        return value;
-      }
+function extractUserIdFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'user_id') {
+      return value; // Assuming the user ID is stored with the name 'userid'
     }
-    return null;
   }
+  return null;
 }
 
 export default function Questionnaire() {
   useEffect(() => {
-    initPreferences();
+    const SendPreferences = document.getElementById('BotonEnviar');
+
+    const handleSendClick = async () => {
+      const cookies = document.cookie;
+      const token = extractTokenFromCookies(cookies);
+      const userId = extractUserIdFromCookies(cookies);
+
+      console.log(userId);
+
+      const HouseSize = document.getElementById('houseSize').value;
+      const Outside = document.getElementById('TimeOutside').value;
+      const Actividad = document.getElementById('ActividadFisica').value;
+      const Preferencia = document.getElementById('PreferenciaMascota').value;
+      const Clima = document.getElementById('TipoClima').value;
+      const Alergias = document.getElementById('Alergias').value;
+
+      try {
+        const response = await fetch("http://localhost:3000/preferences/createPreferences", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token,
+          },
+          body: JSON.stringify({
+            User_id: userId,
+            Housing_Type: HouseSize,
+            Allergies: Alergias,
+            Exercise_ability: Actividad,
+            Category: Preferencia,
+            Outdoor_Time: Outside,
+            Weather: Clima
+          })
+        });
+        const data = await response.json();
+        console.log(data);
+
+        if (data.code === 200) {
+          console.log('Todo jala');
+
+          // Redireccionar a la página de Catalog
+          window.location.href = '/Catalog';
+        }
+      } catch (err) {
+        console.log('Llamen a dios', err);
+      }
+    };
+
+    if (SendPreferences) {
+      SendPreferences.addEventListener('click', handleSendClick);
+    }
+
+    return () => {
+      if (SendPreferences) {
+        SendPreferences.removeEventListener('click', handleSendClick);
+      }
+    };
   }, []);
+
   return (
     <div className={styles.containerFlex}>
       <div className={styles.sideBar}>
@@ -85,9 +98,9 @@ export default function Questionnaire() {
       <span className={styles.inputTextAbove}>¿De qué tamaño es tu casa?</span>
       <label htmlFor="houseSize"></label>
       <select id="houseSize" name="houseSize" className={styles.customInput}>
-        <option value="pequeña">Pequeña</option>
-        <option value="mediana">Mediana</option>
-        <option value="grande">Grande</option>
+        <option value="Pequeno">Pequeña</option>
+        <option value="Mediano">Mediana</option>
+        <option value="Grande">Grande</option>
       </select>
     </div>
 
@@ -105,8 +118,8 @@ export default function Questionnaire() {
             <label htmlFor="Actividad"></label>
             <select id="ActividadFisica" name="ActividadFisica" className={styles.customInput} >
                 <option value="Poco">Poco</option>
-                <option value="Medio">Medio</option>
-                <option value="Alto">Mucho</option>
+                <option value="Moderado">Medio</option>
+                <option value="Mucho">Mucho</option>
             </select>
           </div>
 
@@ -126,9 +139,10 @@ export default function Questionnaire() {
             <span className={styles.inputTextAbove}>¿Que tipo de clima hay donde vives?</span>
             <label htmlFor="Clima"></label>
             <select id="TipoClima" name="TipoClima" className={styles.customInput}>
-                <option value="CalidoySol">Calido y Soleado</option>
-                <option value="Frio y Nevado">Frio y Nevado</option>
-                <option value="Humedo y LLuvioso">Humedo y LLuvioso</option>
+                <option value="Frio">Calido y Soleado</option>
+                <option value="Calor">Frio y Nevado</option>
+                <option value="Templado">Humedo y LLuvioso</option>
+                <option value="Todos los climas">Todos los climas</option>
 
             </select>
           </div>
@@ -136,7 +150,7 @@ export default function Questionnaire() {
             <span className={styles.inputTextAbove}>¿Eres alergico a algun animal?</span>
             <label htmlFor="instagram"></label>
             <select id="Alergias" name="Alergias" className={styles.customInput}>
-                <option value="Si">Si</option>
+                <option value="Yes">Si</option>
                 <option value="No">No</option>
 
             </select>

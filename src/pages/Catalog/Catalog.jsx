@@ -10,6 +10,65 @@ import ReportCard from "../../../components/ReportCard/ReportCard";
 
 import styles from "./catalogStyles.module.css";
 
+function extractTokenFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'token') {
+      return value;
+    }
+  }
+  return null;
+}
+
+function extractUserIdFromCookies(cookieString) {
+  const cookies = cookieString.split(';');
+  for (const cookie of cookies) {
+    const [name, value] = cookie.trim().split('=');
+    if (name === 'user_id') {
+      return value; // Assuming the user ID is stored with the name 'userid'
+    }
+  }
+  return null;
+}
+
+const cookies = document.cookie;
+const userId = extractUserIdFromCookies(cookies)
+
+
+
+function handleUpload()  {
+  // ... (tu lógica de subida de archivo)
+  const token = extractTokenFromCookies(cookies);
+
+  console.log(userId)
+
+  fetch('http://localhost:3000/posts/postsFilteredByPreferences', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token,
+      'userId' : userId 
+      // Aquí puedes agregar tus headers si es necesario
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Network response was not ok.');
+    })
+    .then((data) => {
+      console.log('Posts filtered by preferences:', data);
+      // Realizar acciones con la respuesta del servidor
+    })
+    .catch((error) => {
+      console.error('There was an error:', error);
+      // Manejar el error de la solicitud
+    });
+};
+
+handleUpload()
 
 const PostInfo = [
   {
